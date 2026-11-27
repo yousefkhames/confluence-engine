@@ -22,7 +22,7 @@
   "fear_greed",
   "funding"
  ],
- "generated": "2026-11-27T18:47:53Z",
+ "generated": "2026-11-27T19:00:38Z",
  "horizons": {
   "15m": {
    "labeled_samples": 172,
@@ -75,7 +75,7 @@
  "min_train": 300,
  "paper_only": true,
  "real_money": false,
- "samples_total": 172,
- "span_days": 0.7,
+ "samples_total": 192,
+ "span_days": 0.8,
  "status": "no horizon has enough labeled data yet"
 }

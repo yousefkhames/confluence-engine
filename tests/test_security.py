@@ -151,7 +151,7 @@ class StdlibOnly(unittest.TestCase):
                     mods = [n.module]
                 for m in mods:
                     top = m.split(".")[0]
-                    if top not in std and top not in local and not (rel.startswith(('pipeline', 'tests/test_research')) and top in PIPELINE_THIRD_PARTY):
+                    if top not in std and top not in local and not (rel.startswith(('pipeline', 'tests/test_research', 'tests/test_lenses')) and top in PIPELINE_THIRD_PARTY):
                         hits.append(f"{rel}: {m}")
         self.assertEqual(hits, [], "third-party imports")
 

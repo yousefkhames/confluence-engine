@@ -174,6 +174,21 @@ def main(argv=None):
 
     from pipeline.build_site import build
     build(con, a.site, run, learn, a.data, mcard)
+    try:
+        from pipeline import lenses, site as site_mod
+        hd = os.path.join(a.data, "history"); lp = os.path.join(a.data, "lens_log.json"); lg = None
+        stale = (not os.path.exists(lp)) or (time.time() - os.path.getmtime(lp) > 20 * 3600)
+        if os.path.isdir(hd) and os.listdir(hd):
+            if stale:
+                lg = lenses.run(hd, a.data)
+            elif os.path.exists(lp):
+                lg = json.load(open(lp))
+            cov = site_mod.compute_coverage(hd); json.dump(cov, open(os.path.join(a.data, "coverage.json"), "w"), indent=1)
+        else:
+            cov = None
+        site_mod.finalize(a.site, a.data, lg, cov)
+    except Exception as e:
+        traceback.print_exc(); print("site shell failed: %s" % e)
     print(json.dumps({k: run[k] for k in ("started", "seconds", "errors", "new_signals", "chain_valid", "counts") if k in run}, default=str))
     return 0
 

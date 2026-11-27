@@ -10,7 +10,7 @@ from confluence.ingest import run_once
 from confluence.market import regime
 
 TS_TABLES = ("prices", "news", "whale_tx", "social", "derivs_snap", "events", "market_ctx", "smart_traders", "smart_flow", "source_status")   # monthly JSONL partitions
-FULL_TABLES = ("signals", "outcomes", "weights", "learning_runs", "model_predictions")      # small, saved whole
+FULL_TABLES = ("signals", "outcomes", "weights", "learning_runs", "model_predictions", "candles")      # small, saved whole
 WINDOW_DAYS = 45
 GRANULARITY = 300   # 5-minute bars keep the dataset small
 DERIVS_DDL = ("CREATE TABLE IF NOT EXISTS derivs_snap(symbol TEXT, ts REAL, funding_rate REAL, oi_usd REAL, "
@@ -107,7 +107,8 @@ def main(argv=None):
     learning.ensure_schema(con); rollups.init(con)
     from confluence.adapters import public_feeds
     from pipeline import model
-    public_feeds.init(con); con.execute(model.PRED_DDL)
+    from pipeline import history, patterns_site
+    public_feeds.init(con); con.execute(model.PRED_DDL); history.init(con)
     loaded = load(con, a.data, t0)
     run = {"started": started, "loaded": loaded, "errors": []}
 
@@ -116,6 +117,10 @@ def main(argv=None):
             run["ingest"] = run_once(con, granularity=GRANULARITY)
         except Exception as e:
             run["errors"].append("ingest: %s" % e)
+        try:
+            run["history"] = history.update(con)
+        except Exception as e:
+            run["errors"].append("history: %s" % e)
         try:
             run["public_feeds"] = public_feeds.fetch(con)
         except Exception as e:
@@ -139,6 +144,12 @@ def main(argv=None):
         learn = learning.run(con, promote=True)
     except Exception as e:
         run["errors"].append("learning: %s" % e); traceback.print_exc()
+    pres = None
+    try:
+        pres = patterns_site.run(con, a.data, a.site)
+        run["patterns"] = {r["id"]: r["status"] for r in pres["rules"]}
+    except Exception as e:
+        run["errors"].append("patterns: %s" % e); traceback.print_exc()
     mcard = None
     try:
         mcard = model.run(con, a.data)

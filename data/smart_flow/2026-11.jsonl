@@ -2,6 +2,7 @@
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 23940.769970999998, "symbol": "ETC", "ts": 1795796140.5632255}
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 24304.710753, "symbol": "ETC", "ts": 1795804530.5418804}
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 24305.12384, "symbol": "ETC", "ts": 1795805259.557258}
+{"long_usd": 0.0, "n_traders": 2, "short_usd": 24314.628105, "symbol": "ETC", "ts": 1795809713.170517}
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 24333.6374, "symbol": "ETC", "ts": 1795805950.2978978}
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 24349.34052, "symbol": "ETC", "ts": 1795809380.983925}
 {"long_usd": 0.0, "n_traders": 2, "short_usd": 24354.299382999998, "symbol": "ETC", "ts": 1795806477.8951867}
@@ -17,6 +18,7 @@
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6520536.573219999, "symbol": "AAVE", "ts": 1795806719.8339546}
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6520699.176329999, "symbol": "AAVE", "ts": 1795806477.8951867}
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6529716.80701, "symbol": "AAVE", "ts": 1795807875.6919496}
+{"long_usd": 0.0, "n_traders": 7, "short_usd": 6541570.35845, "symbol": "AAVE", "ts": 1795809713.170517}
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6544602.5354, "symbol": "AAVE", "ts": 1795809380.983925}
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6545184.674178, "symbol": "AAVE", "ts": 1795808980.522253}
 {"long_usd": 0.0, "n_traders": 7, "short_usd": 6552156.597680001, "symbol": "AAVE", "ts": 1795808599.347628}
@@ -25,6 +27,7 @@
 {"long_usd": 0.769, "n_traders": 3, "short_usd": 51422.745469999994, "symbol": "APT", "ts": 1795804530.5418804}
 {"long_usd": 0.7698, "n_traders": 3, "short_usd": 51375.420468000004, "symbol": "APT", "ts": 1795805259.557258}
 {"long_usd": 0.7734, "n_traders": 3, "short_usd": 51578.800065, "symbol": "APT", "ts": 1795805950.2978978}
+{"long_usd": 0.7738, "n_traders": 3, "short_usd": 51472.06559699999, "symbol": "APT", "ts": 1795809713.170517}
 {"long_usd": 0.774, "n_traders": 3, "short_usd": 51485.369309999995, "symbol": "APT", "ts": 1795809380.983925}
 {"long_usd": 0.7744, "n_traders": 3, "short_usd": 51543.196672, "symbol": "APT", "ts": 1795808980.522253}
 {"long_usd": 0.7754, "n_traders": 3, "short_usd": 51712.182015, "symbol": "APT", "ts": 1795806477.8951867}
@@ -35,6 +38,7 @@
 {"long_usd": 1045433.9606239999, "n_traders": 5, "short_usd": 146188.808338, "symbol": "ADA", "ts": 1795804530.5418804}
 {"long_usd": 1046073.98734, "n_traders": 5, "short_usd": 146269.82570000002, "symbol": "ADA", "ts": 1795805259.557258}
 {"long_usd": 1046607.39439, "n_traders": 5, "short_usd": 143597.76337, "symbol": "ADA", "ts": 1795796140.5632255}
+{"long_usd": 1047753.8395900001, "n_traders": 5, "short_usd": 147333.353, "symbol": "ADA", "ts": 1795809713.170517}
 {"long_usd": 1048948.06817, "n_traders": 5, "short_usd": 146663.25728000002, "symbol": "ADA", "ts": 1795805950.2978978}
 {"long_usd": 1049095.53114, "n_traders": 5, "short_usd": 146682.90268, "symbol": "ADA", "ts": 1795806719.8339546}
 {"long_usd": 1049100.8006699998, "n_traders": 5, "short_usd": 147468.47112, "symbol": "ADA", "ts": 1795809380.983925}
@@ -45,6 +49,7 @@
 {"long_usd": 1806209.06376, "n_traders": 9, "short_usd": 8918323.08103, "symbol": "XRP", "ts": 1795804530.5418804}
 {"long_usd": 1808635.2235, "n_traders": 9, "short_usd": 8926280.837679999, "symbol": "XRP", "ts": 1795805259.557258}
 {"long_usd": 1809211.97111, "n_traders": 9, "short_usd": 8906850.63123, "symbol": "XRP", "ts": 1795809380.983925}
+{"long_usd": 1809497.80766, "n_traders": 9, "short_usd": 8902529.42001, "symbol": "XRP", "ts": 1795809713.170517}
 {"long_usd": 1809917.0346, "n_traders": 9, "short_usd": 8929287.079, "symbol": "XRP", "ts": 1795808980.522253}
 {"long_usd": 1811215.47058, "n_traders": 9, "short_usd": 9107322.621089999, "symbol": "XRP", "ts": 1795796140.5632255}
 {"long_usd": 1812721.0146, "n_traders": 9, "short_usd": 9090426.99372, "symbol": "XRP", "ts": 1795796359.597965}
@@ -53,6 +58,7 @@
 {"long_usd": 1816630.08847, "n_traders": 9, "short_usd": 8965511.684055, "symbol": "XRP", "ts": 1795806477.8951867}
 {"long_usd": 1818741.03848, "n_traders": 9, "short_usd": 8951823.32526, "symbol": "XRP", "ts": 1795807875.6919496}
 {"long_usd": 1819331.892, "n_traders": 9, "short_usd": 8964479.091359999, "symbol": "XRP", "ts": 1795808599.347628}
+{"long_usd": 223356.15346, "n_traders": 7, "short_usd": 3513801.38171, "symbol": "LINK", "ts": 1795809713.170517}
 {"long_usd": 223686.02138, "n_traders": 7, "short_usd": 3517013.8108800002, "symbol": "LINK", "ts": 1795809380.983925}
 {"long_usd": 224175.26355, "n_traders": 7, "short_usd": 3524862.9442499997, "symbol": "LINK", "ts": 1795808980.522253}
 {"long_usd": 224859.43776, "n_traders": 7, "short_usd": 3533065.72176, "symbol": "LINK", "ts": 1795808599.347628}
@@ -73,6 +79,7 @@
 {"long_usd": 341086.67857, "n_traders": 14, "short_usd": 14654230.23715, "symbol": "NEAR", "ts": 1795806719.8339546}
 {"long_usd": 342662.341571, "n_traders": 14, "short_usd": 14767885.953163998, "symbol": "NEAR", "ts": 1795808980.522253}
 {"long_usd": 342670.20304, "n_traders": 14, "short_usd": 14770414.016170003, "symbol": "NEAR", "ts": 1795809380.983925}
+{"long_usd": 342681.43371, "n_traders": 14, "short_usd": 14773001.72216, "symbol": "NEAR", "ts": 1795809713.170517}
 {"long_usd": 343669.73267, "n_traders": 14, "short_usd": 14809020.113239998, "symbol": "NEAR", "ts": 1795808599.347628}
 {"long_usd": 343905.57674, "n_traders": 14, "short_usd": 14809687.77109, "symbol": "NEAR", "ts": 1795807875.6919496}
 {"long_usd": 4123.278, "n_traders": 3, "short_usd": 39032.759911999994, "symbol": "FIL", "ts": 1795796359.597965}
@@ -82,9 +89,11 @@
 {"long_usd": 415877.168, "n_traders": 4, "short_usd": 49468.436480000004, "symbol": "ATOM", "ts": 1795796359.597965}
 {"long_usd": 416000.39280000003, "n_traders": 4, "short_usd": 49476.191999999995, "symbol": "ATOM", "ts": 1795796140.5632255}
 {"long_usd": 4167.5958, "n_traders": 3, "short_usd": 39436.101468, "symbol": "FIL", "ts": 1795805950.2978978}
+{"long_usd": 4170.5712, "n_traders": 3, "short_usd": 39469.705532, "symbol": "FIL", "ts": 1795809713.170517}
 {"long_usd": 4176.7569, "n_traders": 3, "short_usd": 39518.974448, "symbol": "FIL", "ts": 1795806477.8951867}
 {"long_usd": 4180.9068, "n_traders": 3, "short_usd": 39562.927692, "symbol": "FIL", "ts": 1795809380.983925}
 {"long_usd": 4181.7681, "n_traders": 3, "short_usd": 39565.303364, "symbol": "FIL", "ts": 1795806719.8339546}
+{"long_usd": 418579.001575, "n_traders": 4, "short_usd": 49632.780022, "symbol": "ATOM", "ts": 1795809713.170517}
 {"long_usd": 4186.701, "n_traders": 3, "short_usd": 39616.88546, "symbol": "FIL", "ts": 1795808980.522253}
 {"long_usd": 418938.235125, "n_traders": 4, "short_usd": 49903.597389999995, "symbol": "ATOM", "ts": 1795804530.5418804}
 {"long_usd": 419338.19937499997, "n_traders": 4, "short_usd": 49959.716986, "symbol": "ATOM", "ts": 1795805259.557258}
@@ -101,6 +110,7 @@
 {"long_usd": 478036.76902, "n_traders": 6, "short_usd": 433665.601305, "symbol": "ARB", "ts": 1795804530.5418804}
 {"long_usd": 478955.585926, "n_traders": 6, "short_usd": 435481.654985, "symbol": "ARB", "ts": 1795806477.8951867}
 {"long_usd": 478963.51074000006, "n_traders": 6, "short_usd": 435457.06998, "symbol": "ARB", "ts": 1795805950.2978978}
+{"long_usd": 479196.65338800004, "n_traders": 6, "short_usd": 435605.955425, "symbol": "ARB", "ts": 1795809713.170517}
 {"long_usd": 479250.00652500003, "n_traders": 6, "short_usd": 435771.80886, "symbol": "ARB", "ts": 1795806719.8339546}
 {"long_usd": 479664.960855, "n_traders": 6, "short_usd": 436126.607955, "symbol": "ARB", "ts": 1795809380.983925}
 {"long_usd": 480136.850216, "n_traders": 6, "short_usd": 433645.60063, "symbol": "ARB", "ts": 1795796359.597965}
@@ -110,6 +120,7 @@
 {"long_usd": 481589.09603699995, "n_traders": 6, "short_usd": 437915.954825, "symbol": "ARB", "ts": 1795808599.347628}
 {"long_usd": 5494.56912, "n_traders": 3, "short_usd": 19589.299759999998, "symbol": "OP", "ts": 1795796359.597965}
 {"long_usd": 5507.03376, "n_traders": 3, "short_usd": 19629.423860000003, "symbol": "OP", "ts": 1795796140.5632255}
+{"long_usd": 5514.04512, "n_traders": 3, "short_usd": 19655.18132, "symbol": "OP", "ts": 1795809713.170517}
 {"long_usd": 5522.61456, "n_traders": 3, "short_usd": 19687.7396, "symbol": "OP", "ts": 1795805259.557258}
 {"long_usd": 5528.84688, "n_traders": 3, "short_usd": 19705.16624, "symbol": "OP", "ts": 1795809380.983925}
 {"long_usd": 5531.96304, "n_traders": 3, "short_usd": 19717.039, "symbol": "OP", "ts": 1795808980.522253}
@@ -126,6 +137,7 @@
 {"long_usd": 65344.022803, "n_traders": 4, "short_usd": 148572.063058, "symbol": "BCH", "ts": 1795805950.2978978}
 {"long_usd": 65404.01862, "n_traders": 4, "short_usd": 148708.36467, "symbol": "BCH", "ts": 1795806719.8339546}
 {"long_usd": 65425.6731, "n_traders": 4, "short_usd": 148766.01195000001, "symbol": "BCH", "ts": 1795806477.8951867}
+{"long_usd": 65521.28124, "n_traders": 4, "short_usd": 148995.88047899998, "symbol": "BCH", "ts": 1795809713.170517}
 {"long_usd": 65575.689, "n_traders": 4, "short_usd": 149068.66017, "symbol": "BCH", "ts": 1795808980.522253}
 {"long_usd": 65593.460817, "n_traders": 4, "short_usd": 149139.998679, "symbol": "BCH", "ts": 1795809380.983925}
 {"long_usd": 65594.17422, "n_traders": 4, "short_usd": 149140.71927, "symbol": "BCH", "ts": 1795808599.347628}
@@ -139,11 +151,13 @@
 {"long_usd": 6756.12357, "n_traders": 6, "short_usd": 1631502.7656000003, "symbol": "LTC", "ts": 1795805950.2978978}
 {"long_usd": 6770.14394, "n_traders": 6, "short_usd": 1633373.624, "symbol": "LTC", "ts": 1795807875.6919496}
 {"long_usd": 6775.53639, "n_traders": 6, "short_usd": 1634015.12901, "symbol": "LTC", "ts": 1795809380.983925}
+{"long_usd": 6778.00151, "n_traders": 6, "short_usd": 1634499.7049600002, "symbol": "LTC", "ts": 1795809713.170517}
 {"long_usd": 6778.77186, "n_traders": 6, "short_usd": 1635518.71313, "symbol": "LTC", "ts": 1795808980.522253}
 {"long_usd": 6779.85035, "n_traders": 6, "short_usd": 1635834.38915, "symbol": "LTC", "ts": 1795808599.347628}
 {"long_usd": 70987.0785, "n_traders": 2, "short_usd": 51461.218776, "symbol": "DOT", "ts": 1795796359.597965}
 {"long_usd": 71161.601785, "n_traders": 2, "short_usd": 51618.870403, "symbol": "DOT", "ts": 1795796140.5632255}
 {"long_usd": 71388.589125, "n_traders": 2, "short_usd": 51780.405075, "symbol": "DOT", "ts": 1795805259.557258}
+{"long_usd": 71400.36677, "n_traders": 2, "short_usd": 51789.724383, "symbol": "DOT", "ts": 1795809713.170517}
 {"long_usd": 71412.144415, "n_traders": 2, "short_usd": 51799.043691, "symbol": "DOT", "ts": 1795804530.5418804}
 {"long_usd": 71487.093065, "n_traders": 2, "short_usd": 51851.853103, "symbol": "DOT", "ts": 1795809380.983925}
 {"long_usd": 71513.86044, "n_traders": 2, "short_usd": 51864.278847, "symbol": "DOT", "ts": 1795808980.522253}
@@ -159,6 +173,7 @@
 {"long_usd": 72856.51545, "n_traders": 9, "short_usd": 2560798.06024, "symbol": "UNI", "ts": 1795805950.2978978}
 {"long_usd": 72887.55045, "n_traders": 9, "short_usd": 2562722.32174, "symbol": "UNI", "ts": 1795806719.8339546}
 {"long_usd": 72937.87845, "n_traders": 9, "short_usd": 2564452.00029, "symbol": "UNI", "ts": 1795806477.8951867}
+{"long_usd": 73237.94834999999, "n_traders": 9, "short_usd": 2577816.1469300003, "symbol": "UNI", "ts": 1795809713.170517}
 {"long_usd": 73289.41935000001, "n_traders": 9, "short_usd": 2579461.69041, "symbol": "UNI", "ts": 1795809380.983925}
 {"long_usd": 73370.01345, "n_traders": 9, "short_usd": 2581927.2388199996, "symbol": "UNI", "ts": 1795807875.6919496}
 {"long_usd": 73377.36241500001, "n_traders": 9, "short_usd": 2582038.201155, "symbol": "UNI", "ts": 1795808980.522253}
@@ -166,11 +181,13 @@
 {"long_usd": 7488942.96423, "n_traders": 18, "short_usd": 301079597.871641, "symbol": "BTC", "ts": 1795796140.5632255}
 {"long_usd": 8012203.77556, "n_traders": 18, "short_usd": 297965379.192495, "symbol": "BTC", "ts": 1795808980.522253}
 {"long_usd": 8066475.1937, "n_traders": 18, "short_usd": 297402059.88321203, "symbol": "BTC", "ts": 1795809380.983925}
+{"long_usd": 8075517.639479999, "n_traders": 18, "short_usd": 297150770.79939, "symbol": "BTC", "ts": 1795809713.170517}
 {"long_usd": 8119514.938259999, "n_traders": 18, "short_usd": 298522622.75233996, "symbol": "BTC", "ts": 1795808599.347628}
 {"long_usd": 8304.04102, "n_traders": 14, "short_usd": 57130641.26011, "symbol": "SOL", "ts": 1795804530.5418804}
 {"long_usd": 8304.61932, "n_traders": 14, "short_usd": 57155211.16886001, "symbol": "SOL", "ts": 1795805259.557258}
 {"long_usd": 8315.954, "n_traders": 14, "short_usd": 57244831.35167, "symbol": "SOL", "ts": 1795796359.597965}
 {"long_usd": 8318.61418, "n_traders": 14, "short_usd": 57255902.46536, "symbol": "SOL", "ts": 1795805950.2978978}
+{"long_usd": 8321.1587, "n_traders": 14, "short_usd": 57334556.428090006, "symbol": "SOL", "ts": 1795809713.170517}
 {"long_usd": 8324.894518, "n_traders": 14, "short_usd": 57308715.02569301, "symbol": "SOL", "ts": 1795806477.8951867}
 {"long_usd": 8327.40434, "n_traders": 14, "short_usd": 57328510.454239994, "symbol": "SOL", "ts": 1795806719.8339546}
 {"long_usd": 8329.8332, "n_traders": 14, "short_usd": 57419782.45938, "symbol": "SOL", "ts": 1795809380.983925}
@@ -183,6 +200,7 @@
 {"long_usd": 88021.75306, "n_traders": 17, "short_usd": 204826814.077055, "symbol": "ETH", "ts": 1795796359.597965}
 {"long_usd": 88042.21836, "n_traders": 17, "short_usd": 206256410.59314, "symbol": "ETH", "ts": 1795805259.557258}
 {"long_usd": 88054.167226, "n_traders": 17, "short_usd": 205575124.03624302, "symbol": "ETH", "ts": 1795804530.5418804}
+{"long_usd": 88133.31676, "n_traders": 17, "short_usd": 209062579.02015996, "symbol": "ETH", "ts": 1795809713.170517}
 {"long_usd": 88157.0852, "n_traders": 17, "short_usd": 206974986.64057, "symbol": "ETH", "ts": 1795806719.8339546}
 {"long_usd": 88181.18009, "n_traders": 17, "short_usd": 207006164.88004497, "symbol": "ETH", "ts": 1795806477.8951867}
 {"long_usd": 88199.33448, "n_traders": 17, "short_usd": 209273366.00207, "symbol": "ETH", "ts": 1795809380.983925}
@@ -198,6 +216,7 @@
 {"long_usd": 929626.158825, "n_traders": 9, "short_usd": 6151955.830298, "symbol": "DOGE", "ts": 1795796359.597965}
 {"long_usd": 930862.575984, "n_traders": 9, "short_usd": 6159639.280512, "symbol": "DOGE", "ts": 1795796140.5632255}
 {"long_usd": 931947.912699, "n_traders": 9, "short_usd": 6139604.234927, "symbol": "DOGE", "ts": 1795804530.5418804}
+{"long_usd": 934148.184214, "n_traders": 9, "short_usd": 6159938.222512, "symbol": "DOGE", "ts": 1795809713.170517}
 {"long_usd": 935118.2178290001, "n_traders": 9, "short_usd": 353617.809475, "symbol": "AVAX", "ts": 1795796359.597965}
 {"long_usd": 935303.5671359999, "n_traders": 9, "short_usd": 6161564.658112, "symbol": "DOGE", "ts": 1795805259.557258}
 {"long_usd": 935428.8463300001, "n_traders": 9, "short_usd": 363164.85747499997, "symbol": "AVAX", "ts": 1795804530.5418804}
@@ -210,6 +229,7 @@
 {"long_usd": 938174.952955, "n_traders": 9, "short_usd": 6190123.46177, "symbol": "DOGE", "ts": 1795808980.522253}
 {"long_usd": 938539.782255, "n_traders": 9, "short_usd": 364394.49753, "symbol": "AVAX", "ts": 1795805950.2978978}
 {"long_usd": 938540.712438, "n_traders": 9, "short_usd": 364433.272533, "symbol": "AVAX", "ts": 1795806477.8951867}
+{"long_usd": 938540.712438, "n_traders": 9, "short_usd": 365878.31135100004, "symbol": "AVAX", "ts": 1795809713.170517}
 {"long_usd": 939058.383528, "n_traders": 9, "short_usd": 364574.52097199997, "symbol": "AVAX", "ts": 1795806719.8339546}
 {"long_usd": 939687.8812909999, "n_traders": 9, "short_usd": 6198043.259962, "symbol": "DOGE", "ts": 1795807875.6919496}
 {"long_usd": 940163.902676, "n_traders": 9, "short_usd": 366507.63499200006, "symbol": "AVAX", "ts": 1795809380.983925}

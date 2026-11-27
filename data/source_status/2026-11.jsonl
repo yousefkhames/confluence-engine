@@ -8,7 +8,9 @@
 {"items": 0, "note": "", "ok": 1, "source": "Federal Reserve press", "ts": 1795808589.1150236}
 {"items": 0, "note": "", "ok": 1, "source": "Federal Reserve press", "ts": 1795808967.9487126}
 {"items": 0, "note": "", "ok": 1, "source": "Federal Reserve press", "ts": 1795809370.3483884}
+{"items": 0, "note": "", "ok": 1, "source": "Federal Reserve press", "ts": 1795809697.004441}
 {"items": 0, "note": "", "ok": 1, "source": "GDELT", "ts": 1795805950.2978363}
+{"items": 0, "note": "", "ok": 1, "source": "GDELT", "ts": 1795809713.170451}
 {"items": 0, "note": "<urlopen error _ssl.c:994: The handshake operation timed out>", "ok": 0, "source": "GDELT", "ts": 1795807875.6918726}
 {"items": 0, "note": "HTTP Error 429: Too Many Requests", "ok": 0, "source": "GDELT", "ts": 1795796140.5629852}
 {"items": 0, "note": "HTTP Error 429: Too Many Requests", "ok": 0, "source": "GDELT", "ts": 1795796359.5977051}
@@ -30,6 +32,7 @@
 {"items": 1, "note": "", "ok": 1, "source": "DeFiLlama stablecoins", "ts": 1795808589.4683013}
 {"items": 1, "note": "", "ok": 1, "source": "DeFiLlama stablecoins", "ts": 1795808968.7990315}
 {"items": 1, "note": "", "ok": 1, "source": "DeFiLlama stablecoins", "ts": 1795809370.6613402}
+{"items": 1, "note": "", "ok": 1, "source": "DeFiLlama stablecoins", "ts": 1795809697.2709773}
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795796127.5756178}
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795796347.936632}
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795804519.0581586}
@@ -41,6 +44,7 @@
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795808589.3544633}
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795808968.1059277}
 {"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795809370.5184073}
+{"items": 1, "note": "", "ok": 1, "source": "Fear&Greed", "ts": 1795809697.1712165}
 {"items": 20, "note": "", "ok": 1, "source": "Federal Reserve press", "ts": 1795796127.4460342}
 {"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795796152.0116613}
 {"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795796369.262749}
@@ -53,6 +57,7 @@
 {"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795808608.7751129}
 {"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795808991.3509192}
 {"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795809392.4256473}
+{"items": 20, "note": "30 traders", "ok": 1, "source": "Hyperliquid smart money", "ts": 1795809724.6398869}
 {"items": 25, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795796127.4067397}
 {"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795796347.6495748}
 {"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795804518.8731234}
@@ -64,3 +69,4 @@
 {"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795808589.0374537}
 {"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795808967.880515}
 {"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795809370.3008602}
+{"items": 5, "note": "", "ok": 1, "source": "SEC press releases", "ts": 1795809696.9420826}

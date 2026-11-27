@@ -1,0 +1,241 @@
+{
+ "generated": "2026-11-27T19:34:14Z",
+ "source": "Binance public dumps (data.binance.vision), spot USDT pairs, hourly.",
+ "rows": [
+  {
+   "coin": "AAVE",
+   "bars_1h": 52970,
+   "bars_6h": 8820,
+   "bars_1d": 2197,
+   "from": "2020-10-15",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 52803,
+   "entries": 1056060
+  },
+  {
+   "coin": "ADA",
+   "bars_1h": 74789,
+   "bars_6h": 12446,
+   "bars_1d": 3094,
+   "from": "2018-04-17",
+   "to": "2026-10-31",
+   "missing_hours": 87,
+   "feature_rows": 74622,
+   "entries": 1492440
+  },
+  {
+   "coin": "APT",
+   "bars_1h": 35374,
+   "bars_6h": 5894,
+   "bars_1d": 1472,
+   "from": "2022-10-19",
+   "to": "2026-10-31",
+   "missing_hours": 1,
+   "feature_rows": 35207,
+   "entries": 704140
+  },
+  {
+   "coin": "ARB",
+   "bars_1h": 31640,
+   "bars_6h": 5272,
+   "bars_1d": 1317,
+   "from": "2023-03-23",
+   "to": "2026-10-31",
+   "missing_hours": 1,
+   "feature_rows": 31473,
+   "entries": 629460
+  },
+  {
+   "coin": "ATOM",
+   "bars_1h": 65775,
+   "bars_6h": 10948,
+   "bars_1d": 2723,
+   "from": "2019-04-29",
+   "to": "2026-10-31",
+   "missing_hours": 53,
+   "feature_rows": 65608,
+   "entries": 1312160
+  },
+  {
+   "coin": "AVAX",
+   "bars_1h": 53519,
+   "bars_6h": 8912,
+   "bars_1d": 2220,
+   "from": "2020-09-22",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 53352,
+   "entries": 1067040
+  },
+  {
+   "coin": "BCH",
+   "bars_1h": 60679,
+   "bars_6h": 10102,
+   "bars_1d": 2514,
+   "from": "2019-11-28",
+   "to": "2026-10-31",
+   "missing_hours": 31,
+   "feature_rows": 60512,
+   "entries": 1210240
+  },
+  {
+   "coin": "BTC",
+   "bars_1h": 80581,
+   "bars_6h": 13402,
+   "bars_1d": 3331,
+   "from": "2017-08-17",
+   "to": "2026-10-31",
+   "missing_hours": 127,
+   "feature_rows": 80414,
+   "entries": 1608280
+  },
+  {
+   "coin": "DOGE",
+   "bars_1h": 64169,
+   "bars_6h": 10682,
+   "bars_1d": 2657,
+   "from": "2019-07-05",
+   "to": "2026-10-31",
+   "missing_hours": 43,
+   "feature_rows": 64002,
+   "entries": 1280040
+  },
+  {
+   "coin": "DOT",
+   "bars_1h": 54342,
+   "bars_6h": 9049,
+   "bars_1d": 2255,
+   "from": "2020-08-18",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 54175,
+   "entries": 1083500
+  },
+  {
+   "coin": "ETC",
+   "bars_1h": 73457,
+   "bars_6h": 12224,
+   "bars_1d": 3039,
+   "from": "2018-06-12",
+   "to": "2026-10-31",
+   "missing_hours": 77,
+   "feature_rows": 73290,
+   "entries": 1465800
+  },
+  {
+   "coin": "ETH",
+   "bars_1h": 80581,
+   "bars_6h": 13402,
+   "bars_1d": 3331,
+   "from": "2017-08-17",
+   "to": "2026-10-31",
+   "missing_hours": 127,
+   "feature_rows": 80414,
+   "entries": 1608280
+  },
+  {
+   "coin": "FIL",
+   "bars_1h": 52956,
+   "bars_6h": 8818,
+   "bars_1d": 2197,
+   "from": "2020-10-15",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 52789,
+   "entries": 1055780
+  },
+  {
+   "coin": "LINK",
+   "bars_1h": 68235,
+   "bars_6h": 11357,
+   "bars_1d": 2825,
+   "from": "2019-01-16",
+   "to": "2026-10-31",
+   "missing_hours": 59,
+   "feature_rows": 68068,
+   "entries": 1361360
+  },
+  {
+   "coin": "LTC",
+   "bars_1h": 77757,
+   "bars_6h": 12932,
+   "bars_1d": 3214,
+   "from": "2017-12-13",
+   "to": "2026-10-31",
+   "missing_hours": 120,
+   "feature_rows": 77590,
+   "entries": 1551800
+  },
+  {
+   "coin": "NEAR",
+   "bars_1h": 52992,
+   "bars_6h": 8824,
+   "bars_1d": 2198,
+   "from": "2020-10-14",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 52825,
+   "entries": 1056500
+  },
+  {
+   "coin": "OP",
+   "bars_1h": 38727,
+   "bars_6h": 6453,
+   "bars_1d": 1612,
+   "from": "2022-06-01",
+   "to": "2026-10-31",
+   "missing_hours": 1,
+   "feature_rows": 38560,
+   "entries": 771200
+  },
+  {
+   "coin": "SOL",
+   "bars_1h": 54527,
+   "bars_6h": 9080,
+   "bars_1d": 2262,
+   "from": "2020-08-11",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 54360,
+   "entries": 1087200
+  },
+  {
+   "coin": "UNI",
+   "bars_1h": 53642,
+   "bars_6h": 8932,
+   "bars_1d": 2225,
+   "from": "2020-09-17",
+   "to": "2026-10-31",
+   "missing_hours": 19,
+   "feature_rows": 53475,
+   "entries": 1069500
+  },
+  {
+   "coin": "XRP",
+   "bars_1h": 74377,
+   "bars_6h": 12377,
+   "bars_1d": 3077,
+   "from": "2018-05-04",
+   "to": "2026-10-31",
+   "missing_hours": 87,
+   "feature_rows": 74210,
+   "entries": 1484200
+  }
+ ],
+ "totals": {
+  "1h": 1201089,
+  "6h": 199926,
+  "1d": 49760
+ },
+ "feature_rows": 1197749,
+ "entries": 23954980,
+ "missing_hours": 947,
+ "not_covered": [
+  "Data ends 2026-10-31; later months are not loaded yet.",
+  "No sub-hour bars (5m, 1m) in the deep history yet.",
+  "Only 20 coins in the deep set.",
+  "No order book, trade-level or spread data: costs are a flat assumption.",
+  "No equities, metals or oil history: no free feed verified."
+ ]
+}

@@ -43,6 +43,14 @@ def inject(site_dir):
         open(f, "w", encoding="utf-8").write(s)
 
 
+def _pm(rd):
+    try:
+        from pipeline import patterns_matrix
+        return patterns_matrix.page(json.load(open(os.path.join(rd, "patterns_matrix.json"))))
+    except Exception as ex:
+        print("patterns matrix failed: %s" % ex); return ""
+
+
 def shell_page(title, body, active):
     return ("<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><title>%s | Confluence Engine</title>"
             "<style>body{font:15px/1.5 system-ui;margin:0;background:var(--bg,#0b0f17);color:var(--ink,#dbe4f0)}a{color:#60a5fa}main{max-width:1200px;margin:auto;padding:16px}"
@@ -178,7 +186,7 @@ def finalize(site_dir, data_dir, lens_log=None, coverage=None):
         from pipeline import fullstudy
         rd = os.path.join(os.path.dirname(__file__), "..", "results")
         knn = json.load(open(os.path.join(rd, "knn_full.json"))); cl = json.load(open(os.path.join(rd, "clusters.json")))
-        open(os.path.join(site_dir, "fullstudy.html"), "w", encoding="utf-8").write(shell_page("Full-population study", fullstudy.page(knn, cl), "fullstudy.html"))
+        open(os.path.join(site_dir, "fullstudy.html"), "w", encoding="utf-8").write(shell_page("Full-population study", fullstudy.page(knn, cl) + _pm(rd), "fullstudy.html"))
         json.dump(knn, open(os.path.join(site_dir, "knn_full.json"), "w")); json.dump(cl, open(os.path.join(site_dir, "clusters.json"), "w"))
     except Exception as ex:
         print("fullstudy page failed: %s" % ex)

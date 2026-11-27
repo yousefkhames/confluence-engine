@@ -1,0 +1,90 @@
+time_cairo,date,pair,direction,expiry,stake,stake_unit,payout_pct,result,pnl,balance_after_ticket,balance_chain_computed,entry_signal_or_reason,session_tag,flag
+,2026-11-27,USD/JPY,,,6 (assumed),T (tournament tokens),,win,,,,,tournament main #1,balance_after not recorded; reason not recorded; time not recorded
+,2026-11-27,USD/JPY,,,6 (assumed),T (tournament tokens),,win,,,,,tournament main #2,balance_after not recorded; reason not recorded; time not recorded
+,2026-11-27,USD/JPY,,,6 (assumed),T (tournament tokens),,win,,,,,tournament main #3,balance_after not recorded; reason not recorded; time not recorded
+14:08:42,2026-11-27,Gold,SELL,3:00,6,T (tournament tokens),80,win,4.8,,,"Fade at upper band worked; oscillator-only, line chart",tournament main #4,balance_after not recorded
+14:11,2026-11-27,AUD/CHF,SELL,3:00,6,T (tournament tokens),88,win,5.28,,,v8 main-session entry,tournament main #5,balance_after not recorded
+~14:12,2026-11-27,CAD/JPY,SELL,3:00,6 (assumed),T (tournament tokens),64,loss,-6,,,"Spike above upper band, RSI~70, Stoch>80, no rejection candle, spike kept running",tournament main #6,balance_after not recorded
+~14:11,2026-11-27,EUR/JPY,SELL,3:00 on M3,6,T (tournament tokens),82,loss,-6,,,Counter-trend fade of an up-leg at an extreme; line chart so candle rules unverifiable,tournament main #7,balance_after not recorded
+14:14:39,2026-11-27,Gold,SELL,3:00,6 (assumed),T (tournament tokens),80,loss,-6,,,Same fade as row 4; price walked the upper band,tournament main #8,balance_after not recorded
+14:34:30,2026-11-27,CAD/JPY,BUY,3 min,6,T (tournament tokens),84,win,5.04,65.08,,"With-trend, higher lows, lower-band bounce; sample of one",tournament main #9,
+16:10,2026-11-27,EUR/JPY,BUY,"3:00 on M3 (1 candle, later flagged)",6,T (tournament tokens),92,win,5.52,70.60,,"Small bounce in mild uptrend, pullback to midline; short expiry partly luck. Chart: line (per session)",tournament main #10,
+16:38,2026-11-27,EUR/JPY,BUY,9:00 on M3 (3 candles),6,T (tournament tokens),92,loss,-6,64.60,,Bought the top of the HH/HL staircase near the upper band; hard reversal. Chart: line (per session),tournament main #11,
+17:04:40,2026-11-27,EUR/JPY,SELL,9:00 on M3,12,T (tournament tokens),92,win,11.04,,,"Downtrend continued after rejected bounce; 6 of 7 red candles, below midline, bands down, stoch oversold but bounce did not come",tournament main #12,balance_after not recorded
+17:07:12,2026-11-27,AUD/CAD,BUY,9:00 on M3,6,T (tournament tokens),92,loss,-6,,,"Choppy range 0.9880-0.9921, no trend behind the impulse; red body engulfed the pause candle",tournament experiment #13,balance_after not recorded
+17:17:56,2026-11-27,WTI,BUY,9:00 on M3,12,T (tournament tokens),80,loss,-12,,,Chased upper band after stalled momentum; RSI/Stoch flat,tournament main #14,balance_after not recorded
+17:30:30,2026-11-27,EUR/JPY,SELL,9:00 on M3,12,T (tournament tokens),92,win,11.04,,,"Downtrend continued after weak bounce under midline; lower highs, bands down",tournament main #15,balance_after not recorded
+17:40:12,2026-11-27,WTI,BUY,9:00 on M3,12,T (tournament tokens),80,win,9.6,,,"Bounce after 5 red candles, close back inside band, Stoch up from <20",tournament main #16,balance_after not recorded
+17:37:00,2026-11-27,AUD/CHF,BUY,9:00 on M3,6,T (tournament tokens),92 (implied by +5.52),win,5.52,,,Finished above entry,tournament experiment #17,balance_after not recorded
+~17:48,2026-11-27,AUD/CHF,SELL,9:00,1,T (tournament tokens),92,open at time of file,,,,with-trend continuation (experiment #2),tournament experiment #18,balance_after not recorded
+17:48:20,2026-11-27,AUD/CHF,BUY,M1 3:00,1,T (tournament tokens),92,loss,-1,,,Band-poke bounce did not show at 1 minute,tournament experiment #19,balance_after not recorded
+17:49:40,2026-11-27,AUD/CHF,SELL,M1,1,T (tournament tokens),92,win,0.92,,,Continuation at 1 min with M3 candle still falling,tournament experiment #20,balance_after not recorded
+,2026-11-27,AUD/CHF,SELL,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S12,balance_after not recorded; time not recorded
+,2026-11-27,AUD/USD,SELL,M5,1,T (tournament tokens),92,win,0.92,,,Fade,tournament experiment #S13,balance_after not recorded; time not recorded
+,2026-11-27,EUR/JPY,BUY,M5,1,T (tournament tokens),92,win,0.92,,,Fade,tournament experiment #S14,balance_after not recorded; time not recorded
+,2026-11-27,USD/CHF,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S15,balance_after not recorded; time not recorded
+,2026-11-27,USD/CNH,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Fade,tournament experiment #S16,balance_after not recorded; time not recorded
+,2026-11-27,CAD/CHF,BUY,M5,1,T (tournament tokens),92,win,0.92,,,StochTurn,tournament experiment #S17,balance_after not recorded; time not recorded
+,2026-11-27,EUR/RUB,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Momentum,tournament experiment #S18,balance_after not recorded; time not recorded
+,2026-11-27,Brent,BUY,M5,1,T (tournament tokens),80,loss,-1,,,Fade,tournament experiment #S19,balance_after not recorded; time not recorded
+,2026-11-27,Gold,BUY,M5,1,T (tournament tokens),80,loss,-1,,,BandWalk,tournament experiment #S20,balance_after not recorded; time not recorded
+,2026-11-27,Silver,SELL,M5,1,T (tournament tokens),80,loss,-1,,,Momentum,tournament experiment #S21,balance_after not recorded; time not recorded
+,2026-11-27,WTI,SELL,M5,1,T (tournament tokens),80,loss,-1,,,Fade,tournament experiment #S22,balance_after not recorded; time not recorded
+,2026-11-27,BHD/CNY,SELL,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S23,balance_after not recorded; time not recorded
+,2026-11-27,CHF/JPY,BUY,M5,1,T (tournament tokens),92,loss,-1,,,StochTurn,tournament experiment #S24,balance_after not recorded; time not recorded
+,2026-11-27,NGN/USD,BUY,M5,1,T (tournament tokens),92,loss,-1,,,MidReclaim,tournament experiment #S25,balance_after not recorded; time not recorded
+,2026-11-27,SAR/CNY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,BandRev,tournament experiment #S26,balance_after not recorded; time not recorded
+,2026-11-27,USD/BRL,SELL,M5,1,T (tournament tokens),92,win,0.92,,,Momentum,tournament experiment #S27,balance_after not recorded; time not recorded
+,2026-11-27,USD/EGP,SELL,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S28,balance_after not recorded; time not recorded
+,2026-11-27,OMR/CNY,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S29,balance_after not recorded; time not recorded
+,2026-11-27,AUD/CHF,BUY,M5,1,T (tournament tokens),92,loss,-1,,,MidReclaim,tournament experiment #S30,balance_after not recorded; time not recorded
+,2026-11-27,EUR/JPY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Momentum,tournament experiment #S31,balance_after not recorded; time not recorded
+,2026-11-27,CAD/JPY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,MidReclaim,tournament experiment #S32,balance_after not recorded; time not recorded
+,2026-11-27,UAH/USD,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Momentum,tournament experiment #S33,balance_after not recorded; time not recorded
+,2026-11-27,EUR/RUB,BUY,M5,1,T (tournament tokens),92,loss,-1,,,ImpulseChase,tournament experiment #S34,balance_after not recorded; time not recorded
+,2026-11-27,USD/CNH,SELL,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S35,balance_after not recorded; time not recorded
+,2026-11-27,AUD/USD,BUY,M5,1,T (tournament tokens),92,loss,-1,,,MidReclaim,tournament experiment #S36,balance_after not recorded; time not recorded
+,2026-11-27,BHD/CNY,BUY,M5,1,T (tournament tokens),92,win,0.92,,,StochTurn,tournament experiment #S37,balance_after not recorded; time not recorded
+,2026-11-27,EUR/TRY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Fade,tournament experiment #S38,balance_after not recorded; time not recorded
+,2026-11-27,OMR/CNY,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S39,balance_after not recorded; time not recorded
+,2026-11-27,UAH/USD,SELL,M5,1,T (tournament tokens),92,win,0.92,,,Momentum,tournament experiment #S40,balance_after not recorded; time not recorded
+,2026-11-27,USD/BRL,BUY,M5,1,T (tournament tokens),92,loss,-1,,,StochTurn,tournament experiment #S41,balance_after not recorded; time not recorded
+,2026-11-27,EUR/JPY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Momentum with-trend,tournament experiment #S42,balance_after not recorded; time not recorded
+,2026-11-27,AUD/CHF,BUY,M5,1,T (tournament tokens),92,win,+0.92,,,Band-touch reversal (H1),tournament experiment #S43,balance_after not recorded; time not recorded
+,2026-11-27,BHD/CNY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,band-walk; fade-type failure,tournament experiment #S44,balance_after not recorded; time not recorded
+,2026-11-27,LBP/USD,SELL,M5,1,T (tournament tokens),92,loss,-1,,,price kept rising,tournament experiment #S45,balance_after not recorded; time not recorded
+,2026-11-27,NGN/USD,BUY,M5,1,T (tournament tokens),92,win,+0.92,,,Band-touch reversal (H1),tournament experiment #S46,balance_after not recorded; time not recorded
+,2026-11-27,SAR/CNY,SELL,M5,1,T (tournament tokens),92,loss,-1,,,Momentum with-trend,tournament experiment #S47,balance_after not recorded; time not recorded
+,2026-11-27,USD/BRL,SELL,M5,1,T (tournament tokens),92,win,0.92,,,Band-walk (H4),tournament experiment #S48,balance_after not recorded; time not recorded
+,2026-11-27,EUR/RUB,SELL,M5,1,T (tournament tokens),92,win,0.92,,,Momentum with-trend,tournament experiment #S49,balance_after not recorded; time not recorded
+,2026-11-27,LBP/USD,SELL,M5,1,T (tournament tokens),92,loss,-1,,,BandWalk,tournament experiment #S50,balance_after not recorded; time not recorded
+,2026-11-27,UAH/USD,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S51,balance_after not recorded; time not recorded
+,2026-11-27,USD/ARS,BUY,M5,1,T (tournament tokens),92,loss,-1,,,Momentum,tournament experiment #S52,balance_after not recorded; time not recorded
+,2026-11-27,AUD/CHF,SELL,M5,1,T (tournament tokens),92,win,0.92,,,MidReclaim,tournament experiment #S53,balance_after not recorded; time not recorded
+,2026-11-27,EUR/TRY,BUY,M5,1,T (tournament tokens),92,loss,-1,,,BandRev,tournament experiment #S54,balance_after not recorded; time not recorded
+,2026-11-27,OMR/CNY,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S55,balance_after not recorded; time not recorded
+,2026-11-27,EUR/RUB,SELL,M5,1,T (tournament tokens),92,loss,-1,,,BandWalk,tournament experiment #S56,balance_after not recorded; time not recorded
+,2026-11-27,USD/CNH,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandWalk,tournament experiment #S57,balance_after not recorded; time not recorded
+18:57:36,2026-11-27,USD/JPY,SELL,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S58,balance_after not recorded
+,2026-11-27,USD/SGD,BUY,M5,1,T (tournament tokens),92,win,0.92,,,BandRev,tournament experiment #S59,balance_after not recorded; time not recorded
+~19:05,2026-11-27,SAR/CNY,BUY,M5,40.66,T (tournament tokens),92,win,37.41,118.73,,"Closed above prediction; BandRev H1, conviction medium. Exit price not on ticket",tournament high-stake #H60,
+~19:14,2026-11-27,OMR/CNY,SELL,M5,59.36,T (tournament tokens),92,win,54.61,173.34,,Walk continued; no green close inside band. Exit price not on ticket,tournament high-stake #H61,
+~19:25,2026-11-27,BHD/CNY,BUY,M5,86.67,T (tournament tokens),92,loss,-86.67,86.67,,"Bounce failed. Confirming green close was the prior candle (19:20); entry candle was a small red doji, i.e. confirmation was one candle old and not followed through. Exit price not on ticket",tournament high-stake #H62,
+19:55,2026-11-27,CHF/JPY OTC,SELL,5m,2,USD (demo),92,win,1.84,4135.04 raw,,"BandWalk, conv1: walking lower band, stoch low, small green open candle; weak (entry 186.474)",demo pre-reset #1,"pre-reset paper ledger: paper 101.84; raw demo 4135.04; relay earlier said 20:00, raw log says 19:55"
+20:16,2026-11-27,AUD/USD OTC,SELL,5m,2,USD (demo),92,loss (unconfirmed),-2,,,"BandWalk, conv2: 7 red candles walking lower band, open candle red, stoch flat low (entry 0.64791)",demo pre-reset #2,"ticket showed payout 0/0 at 20:21: LOSS or REFUND not confirmed, booked as -2 provisionally; pre-reset"
+20:43,2026-11-27,EUR/JPY OTC,SELL,5m,2,USD (demo),92,win,1.84,,101.84,"BandRev, conv1: downtrend, rejected at falling EMA50 resistance ~173.8 after bounce off 173.155, Stoch ~85 (entry 173.801)",demo post-reset #3,ticket balance 101.68 logged at 20:49 with #5 stake open
+20:43,2026-11-27,CHF/NOK OTC,SELL,5m,2,USD (demo),92,win,1.84,,103.68,"BandRev, conv2: range 14.2-14.7, spike to upper band, Stoch ~85, red candle forming, resistance ~14.65 (entry 14.628)",demo post-reset #4,stake $2 at conv2 because sizing ladder started 20:48
+20:47,2026-11-27,EUR/CHF OTC,SELL,5m,2,USD (demo),92,loss,-2,99.68,101.68,"BandWalk, conv1: red candle confirming, breaking below EMAs near lower band; support 0.9096 close (entry 0.91277)",demo post-reset #5,
+20:49,2026-11-27,AED/CNY OTC,SELL,5m,2,USD (demo),92,win,1.84,103.52,103.52,"BandWalk, conv1: clean downtrend under EMA20/50 riding lower band, S near 1.9316 (entry 1.93565)",demo post-reset #6,
+20:58,2026-11-27,CHF/NOK OTC,SELL,5m,4,USD (demo),92,loss,-4,,99.52,"BandRev, conv2: range 14.2-14.7, upper band, Stoch ~80, same 14.65 resistance that rejected at 20:43 (entry 14.623)",demo post-reset #7,flat-2 shadow -2; ticket balance not logged
+20:58,2026-11-27,EUR/JPY OTC,SELL,5m,4,USD (demo),92,win,3.68,103.20,103.20,"BandRev, conv2: downtrend, 2nd test of falling EMA50 resistance 173.8-173.9, Stoch ~85 (entry 173.87)",demo post-reset #8,flat-2 shadow +1.84; placed 26 s after #7 while #7 open
+21:07,2026-11-27,AED/CNY OTC,BUY,5m,2,USD (demo),92,win,1.84,,105.04,"BandRev, conv1: double bottom at 1.9316 support, lower band, Stoch rising from 20, green candle; downtrend overall (entry 1.93722)",demo post-reset #9,closed 21:12:53; ticket balance not logged
+21:08,2026-11-27,AUD/CAD OTC,BUY,5m,2,USD (demo),92,win,1.84,106.88,106.88,"BandWalk, conv1: breakout from 0.9776 base, 6 green candles above upper band, RSI>70, extended (entry 0.99792)",demo post-reset #10,closed 21:13:18
+21:14,2026-11-27,CHF/JPY OTC,BUY,1h,2,USD (demo),92,open (to 22:14),,,,"BandRev, conv1: lower band touch after downtrend, RSI~35, stoch turning up; counter-trend, long-horizon test",demo post-reset #11,open at time of file
+21:14:55,2026-11-27,USD/CAD OTC,SELL,15m,2,USD (demo),92,win,1.84,,108.72,"BandWalk, conv1: 7 red candles walking below lower band, RSI~28; late with-trend entry, entry candle red",demo post-reset #12,closed 21:29:55; ticket balance not logged
+21:20:05,2026-11-27,EUR/USD OTC,BUY,5m,2,USD (demo),92,loss,-2,,106.72,"BandWalk, conv1: steady uptrend riding upper band, RSI~65, MAs stacked up; early walk",demo post-reset #13,
+21:27:50,2026-11-27,AUD/USD OTC,BUY,15m,2,USD (demo),92,open (to 21:42),,,,"BandRev, conv1: sharp drop to lower band, RSI~32 turning up, small green bounce candles; counter-trend vs strong downtrend",demo post-reset #14,open at time of file
+21:30:30,2026-11-27,UAH/USD OTC,BUY,5m,2,USD (demo),92,win,1.84,104.56,108.56,"MidReclaim, conv1: uptrend pullback to mid band, RSI~45 turning up, stoch up from 20, green candle",demo post-reset #15,closed 21:35:30; 104.56 = 108.56 minus open stakes #11 and #14 ($4)
+20:23,2026-11-27,AUD/USD OTC,,,4133.04,USD (demo),,,,,,not placed by our session; the user's own,user external,result not seen; excluded from all stats
+20:24,2026-11-27,AUD/USD OTC,,,4,USD (demo),,,,,,not placed by our session; the user's own,user external,result not seen; excluded from all stats
+~20:40,2026-11-27,,,,,,,,,100.00,,user reset the demo balance to 100,user external (reset event),"reset marker, not a trade; no 'burn' trade label seen in the ticket history"

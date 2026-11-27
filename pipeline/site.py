@@ -5,7 +5,7 @@ import json, os, html, glob, datetime, re
 REPO = "https://github.com/yousefkhames/confluence-engine"
 RAW = "https://raw.githubusercontent.com/yousefkhames/confluence-engine"
 PAGES = [("index.html", "Live"), ("paper.html", "Paper test"), ("patterns.html", "Patterns"), ("research.html", "Research"),
-         ("lenses.html", "Lenses"), ("coverage.html", "Coverage"), ("runs.html", "Runs"), ("data.html", "Data"), ("demo.html", "Synthetic demo")]
+         ("lenses.html", "Lenses"), ("demo-trades.html", "Demo trades"), ("coverage.html", "Coverage"), ("runs.html", "Runs"), ("data.html", "Data"), ("demo.html", "Synthetic demo")]
 
 CSS = """<style id=shell>
 :root{--bg:#0b0f17;--card:#111827;--line:#1f2a40;--ink:#dbe4f0;--mut:#8da2bd;--acc:#60a5fa}
@@ -155,6 +155,14 @@ def finalize(site_dir, data_dir, lens_log=None, coverage=None):
     if coverage:
         open(os.path.join(site_dir, "coverage.html"), "w", encoding="utf-8").write(coverage_page(coverage))
         json.dump(coverage, open(os.path.join(site_dir, "coverage.json"), "w"), indent=1)
+    try:
+        from pipeline import demo_trades
+        raw = os.path.join(os.path.dirname(__file__), "..", "demo", "demo_trades_raw.csv")
+        if os.path.exists(raw):
+            dres = demo_trades.analyze(raw); json.dump(dres, open(os.path.join(site_dir, "demo_trades.json"), "w"), indent=1)
+            open(os.path.join(site_dir, "demo-trades.html"), "w", encoding="utf-8").write(shell_page("Demo trades", demo_trades.page(dres), "demo-trades.html"))
+    except Exception as ex:
+        print("demo trades page failed: %s" % ex)
     open(os.path.join(site_dir, "runs.html"), "w", encoding="utf-8").write(runs_page(data_dir))
     open(os.path.join(site_dir, "data.html"), "w", encoding="utf-8").write(data_page(site_dir))
     build_manifest(site_dir, data_dir)

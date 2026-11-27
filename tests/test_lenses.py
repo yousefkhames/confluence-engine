@@ -37,3 +37,14 @@ class T(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DemoTrades(unittest.TestCase):
+    def test_stats(self):
+        from pipeline import demo_trades as D
+        lo, hi = D.wilson(8, 11); self.assertTrue(lo < 8 / 11 < hi)
+        up, two = D.binom_p_ge(5, 10, 0.5); self.assertAlmostEqual(up, 0.623046875, 5)
+        raw = os.path.join(os.path.dirname(__file__), "..", "demo", "demo_trades_raw.csv")
+        r = D.analyze(raw); self.assertEqual(r["total_rows"], 89)
+        s = r["segments"]["post_reset_usd"]; self.assertEqual(s["wins"] + s["losses"], s["closed"])
+        self.assertIn("<table>", D.page(r))

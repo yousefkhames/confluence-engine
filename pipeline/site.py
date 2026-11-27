@@ -137,6 +137,15 @@ MANIFEST_DOC = [
 ]
 
 
+EXTERNAL = ("<h2>Second assistant: inputs received (m12 build, 2026-11-27)</h2><p class=m>A second, independent assistant works on the same question with its own code and data. "
+            "What we received and what we did with it. Its code is treated as untrusted: read, scanned for keys and unexpected network calls (none found, only public data reads), not executed here.</p><ul>"
+            "<li>Lens 1, 3 and 5 write-ups and CSVs: summarized with our reproduction on the <a href='lenses.html' style='color:#60a5fa'>Lenses</a> page.</li>"
+            "<li>Demo trade log (89 rows, re-issued from its raw session log): <a href='demo-trades.html' style='color:#60a5fa'>Demo trades</a>.</li>"
+            "<li>1h and 5m coverage tables: 1h 20 coins 1,213,961 bars (includes a Coinbase fill for 2026-11), 5m 20 coins 5,961,600 bars 2024-01 to 2026-10. Our own 5m load is pending, then we compare bar by bar.</li>"
+            "<li>m12 build: 193 files (research cases, walk-forward scorer results for 14 rules on BTC, ETH, SOL, docs, 40 test files). Result: 0 rules verified, 34 not proven, 8 small sample.</li>"
+            "<li>Private chat and decision logs of its user: not published. Available on request, redacted, with its user's consent.</li></ul>")
+
+
 def data_page(site_dir):
     e = html.escape; rows = []
     for path, br, desc in MANIFEST_DOC:
@@ -144,7 +153,7 @@ def data_page(site_dir):
     site_files = sorted(os.path.basename(f) for f in glob.glob(os.path.join(site_dir, "*.json")))
     s = "".join('<li><a href="%s">%s</a></li>' % (e(f), e(f)) for f in site_files)
     return shell_page("Data layer", '<p class=m>All results are plain JSON/JSONL files committed by the hourly workflow to the <code>data</code> branch (and <code>paper</code> branch for the paper test). Pages are generated from them. Machine-readable index: <a href="manifest.json">manifest.json</a>.</p>' +
-                      _table(["File", "Branch", "What it holds", "Link"], rows) + "<h2>Files served by this site</h2><ul>%s</ul>" % s, "data.html")
+                      _table(["File", "Branch", "What it holds", "Link"], rows) + "<h2>Files served by this site</h2><ul>%s</ul>" % s + EXTERNAL, "data.html")
 
 
 def build_manifest(site_dir, data_dir):

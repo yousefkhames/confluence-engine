@@ -1,5 +1,5 @@
 """Coinbase Exchange public candles (no key). 1-minute bars."""
-from .http import get
+from ._http import get
 from .. import config
 
 def fetch(con, coins=None, granularity=60):

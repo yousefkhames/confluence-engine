@@ -18,7 +18,12 @@ def _tokens(t):
     return re.findall(r"[a-z\-]+", t.lower())
 
 def score_text(text):
-    """Return (sentiment in [-1,1], urgency in [0,1])."""
+    """Return (sentiment in [-1,1], urgency in [0,1]). Set CONFLUENCE_NLP=2 to use confluence.nlp2 (FinBERT if cached)."""
+    import os
+    if os.environ.get("CONFLUENCE_NLP") == "2":
+        from . import nlp2
+        a = nlp2.analyze(text)
+        return a["sentiment"]["score"], a["urgency"]
     toks = _tokens(text)
     low = text.lower()
     p = sum(1 for w in toks if w in POS)

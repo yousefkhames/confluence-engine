@@ -1,4 +1,4 @@
-"""Builds docs/index.html: a static page from SYNTHETIC demo data. Run from the repo root: python3 docs/build_demo.py"""
+"""Builds docs/demo.html: a static page from SYNTHETIC demo data. Run from the repo root: python3 docs/build_demo.py"""
 import sqlite3, json, sys, os, html
 sys.path.insert(0, os.getcwd())
 from confluence import db, demo, signals, config
@@ -30,7 +30,7 @@ main{{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:14px;paddin
 .card{{background:#111827;border-radius:8px;padding:10px;margin-bottom:8px}}.L{{border-left:4px solid #22c55e}}.S{{border-left:4px solid #ef4444}}.score{{font-size:20px;font-weight:700}}small{{color:#8da2bd}}.flag{{color:#f59e0b;font-size:12px}}
 canvas{{background:#111827;border-radius:8px;width:100%}}table{{border-collapse:collapse}}td,th{{padding:4px 10px;border-bottom:1px solid #223}}</style>
 <div class=warn>SYNTHETIC DEMO DATA with planted patterns. Not real market data, not a track record, not financial advice. Paper signals only.</div>
-<header><b>Confluence Engine</b> &middot; built with Khames's Instinct &middot; <a style=color:#60a5fa href="https://github.com/yousefkhames/confluence-engine">source</a></header>
+<header><b>Confluence Engine</b> &middot; built with an AI assistant (Instinct) &middot; <a style=color:#60a5fa href="https://github.com/yousefkhames/confluence-engine">source</a></header>
 <main><div><h3>Latest paper signals (synthetic)</h3>{cards}</div>
 <div><h3>{sym} synthetic price with signal markers</h3><canvas id=c width=900 height=380></canvas>
 <h3>Outcome log on synthetic data (hash chain valid: {ok})</h3><table><tr><th>Horizon</th><th>Signals</th><th>Hit rate</th><th>Avg directional return %</th></tr>{tr}</table>
@@ -39,4 +39,4 @@ canvas{{background:#111827;border-radius:8px;width:100%}}table{{border-collapse:
 if(P.length){{const t0=P[0][0],t1=P[P.length-1][0],lo=Math.min(...P.map(p=>p[1])),hi=Math.max(...P.map(p=>p[1]));const X=t=>30+(t-t0)/(t1-t0)*850,Y=v=>360-(v-lo)/(hi-lo||1)*330;
 x.strokeStyle='#60a5fa';x.beginPath();P.forEach((p,i)=>i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1])));x.stroke();
 S.forEach(s=>{{x.fillStyle=s[2]=='LONG'?'#22c55e':'#ef4444';x.fillRect(X(s[0])-4,Y(s[1])-4,8,8)}})}}</script></html>"""
-open("docs/index.html", "w").write(page); print(len(rows), ok, rec)
+open("docs/demo.html", "w").write(page); print(len(rows), ok, rec)

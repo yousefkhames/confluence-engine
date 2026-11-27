@@ -1,6 +1,15 @@
 """Price helpers, Price-In ratio, market regime."""
 import statistics
 
+def _stride(rows, seconds):
+    """Rows to skip to get roughly one sample per `seconds`. 1-minute bars: 60 for an hour; 5-minute bars: 12."""
+    if len(rows) < 3:
+        return 1
+    ts = [r["ts"] for r in rows[: min(len(rows), 50)]]
+    gaps = sorted(b - a for a, b in zip(ts, ts[1:]) if b > a)
+    bar = gaps[len(gaps) // 2] if gaps else 60
+    return max(1, int(round(seconds / max(bar, 1))))
+
 def price_at(con, sym, ts, side="before"):
     if side == "before":
         r = con.execute("SELECT close FROM prices WHERE symbol=? AND ts<=? ORDER BY ts DESC LIMIT 1", (sym, int(ts))).fetchone()
@@ -33,7 +42,7 @@ def regime(con, ref="BTC", now=None):
         return {"regime": "Unknown", "er": None, "ret_pct": None, "conf_mult": 1.0}
     rows = con.execute("SELECT ts, close FROM prices WHERE symbol=? AND ts>? AND ts<=? ORDER BY ts",
                        (ref, int(now - 86400), int(now))).fetchall()
-    closes = [r["close"] for r in rows][::60] or [r["close"] for r in rows]
+    closes = [r["close"] for r in rows][::_stride(rows, 3600)] or [r["close"] for r in rows]
     if len(closes) < 6:
         return {"regime": "Unknown", "er": None, "ret_pct": None, "conf_mult": 1.0}
     net = closes[-1] / closes[0] - 1
@@ -48,9 +57,9 @@ def regime(con, ref="BTC", now=None):
     return {"regime": reg, "er": round(er, 3), "ret_pct": round(net * 100, 2), "conf_mult": mult}
 
 def volatility_pct(con, sym, now, hours=24):
-    rows = con.execute("SELECT close FROM prices WHERE symbol=? AND ts>? AND ts<=? ORDER BY ts",
+    rows = con.execute("SELECT ts, close FROM prices WHERE symbol=? AND ts>? AND ts<=? ORDER BY ts",
                        (sym, int(now - hours * 3600), int(now))).fetchall()
-    c = [r["close"] for r in rows][::15]
+    c = [r["close"] for r in rows][::_stride(rows, 900)]
     if len(c) < 5:
         return 1.0
     rets = [(c[i] / c[i - 1] - 1) * 100 for i in range(1, len(c))]

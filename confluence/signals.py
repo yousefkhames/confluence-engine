@@ -102,3 +102,14 @@ def reweight(con, horizon="1h", lr=0.3, min_n=20):
         con.execute("INSERT INTO weights(k,v) VALUES(?,?) ON CONFLICT(k) DO UPDATE SET v=excluded.v", (k, v))
     con.commit()
     return new
+
+def save_weights(con, w):
+    """Single writer for factor weights (used by learning.run(promote=True)). Normalizes and validates keys."""
+    keys = set(config.DEFAULT_WEIGHTS)
+    if set(w) != keys or any(v < 0 for v in w.values()):
+        raise ValueError("weights must have keys %s and be non-negative" % sorted(keys))
+    s = sum(w.values()) or 1
+    for k, v in w.items():
+        con.execute("INSERT INTO weights(k,v) VALUES(?,?) ON CONFLICT(k) DO UPDATE SET v=excluded.v", (k, v / s))
+    con.commit()
+    return {k: v / s for k, v in w.items()}

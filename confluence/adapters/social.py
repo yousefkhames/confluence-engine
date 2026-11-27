@@ -1,7 +1,7 @@
 """Public Reddit RSS (Atom) feeds for sentiment. No login. X/Twitter and Telegram are NOT used: they need paid or
 keyed access. Plug a licensed feed into `ingest_posts` if you have one."""
 import re, hashlib, time, datetime, xml.etree.ElementTree as ET
-from .http import get
+from ._http import get
 from .. import config, nlp
 
 SUBS = ["CryptoCurrency", "Bitcoin", "ethereum", "solana", "CryptoMarkets"]

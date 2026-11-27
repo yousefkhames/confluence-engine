@@ -1,6 +1,6 @@
 """Public RSS news (no key, no scraping behind logins). Timestamp = published time, millisecond precision where given."""
 import re, hashlib, email.utils, xml.etree.ElementTree as ET
-from .http import get
+from ._http import get
 from .. import config, nlp
 
 FEEDS = {
@@ -9,6 +9,8 @@ FEEDS = {
     "Decrypt": "https://decrypt.co/feed",
     "TheBlock": "https://www.theblock.co/rss.xml",
     "Bitcoin Magazine": "https://bitcoinmagazine.com/.rss/full/",
+    "CryptoSlate": "https://cryptoslate.com/feed/",
+    "TheDefiant": "https://thedefiant.io/api/feed",
 }
 
 def fetch(con, feeds=None):

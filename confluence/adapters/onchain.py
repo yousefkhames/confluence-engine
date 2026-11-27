@@ -2,7 +2,7 @@
 Direction needs address labels (data/labels.json, supplied by the operator; none are bundled so nothing is invented).
 Without labels, transfers are stored as wallet_to_wallet and carry no directional weight."""
 import time
-from .http import get, post_json
+from ._http import get, post_json
 from .. import config
 from ..wallets import load_labels, classify_direction
 from .prices import fetch as _p
@@ -38,3 +38,10 @@ def fetch_eth(con, blocks=5):
                 con.execute("INSERT OR IGNORE INTO whale_tx VALUES(?,?,?,?,?,?,?,?)",
                             (tx["hash"], ts, "ETH", tx["from"], tx["to"], usd, kind, wallet)); n += 1
     con.commit(); return n
+
+def fetch(con):
+    n = 0
+    for fn in (fetch_btc, fetch_eth):
+        try: n += fn(con)
+        except Exception as e: print(f"onchain {fn.__name__}: {e}")
+    return n

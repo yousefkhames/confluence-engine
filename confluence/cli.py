@@ -8,6 +8,7 @@ def main(argv=None):
     sub.add_parser("demo-data", help="fill DB with SYNTHETIC data")
     sub.add_parser("ingest", help="pull live public data once")
     sc = sub.add_parser("scan"); sc.add_argument("--threshold", type=float); sc.add_argument("--now", type=float)
+    ru = sub.add_parser("rollup"); ru.add_argument("--prune", action="store_true"); ru.add_argument("--keep-days", type=int, default=7)
     sub.add_parser("outcomes"); sub.add_parser("profile"); sub.add_parser("reweight"); sub.add_parser("verify")
     bt = sub.add_parser("backtest"); bt.add_argument("--threshold", type=float, default=None)
     ds = sub.add_parser("dashboard"); ds.add_argument("--port", type=int, default=8080)
@@ -24,6 +25,8 @@ def main(argv=None):
         from .signals import scan; from .alerts import send
         now = a.now or (con.execute("SELECT MAX(ts) t FROM prices").fetchone()["t"])
         for s in scan(con, now, a.threshold): send(s)
+    elif a.cmd == "rollup":
+        from . import rollups; print(rollups.run_all(con, a.prune, a.keep_days))
     elif a.cmd == "outcomes":
         from .signals import evaluate_outcomes, track_record
         now = con.execute("SELECT MAX(ts) t FROM prices").fetchone()["t"]

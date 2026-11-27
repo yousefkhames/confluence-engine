@@ -9,6 +9,15 @@ def _t(ts): return datetime.datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d %H:
 def answer(con, q):
     now = con.execute("SELECT MAX(ts) t FROM prices").fetchone()["t"] or time.time()
     ql = q.lower(); coins = nlp.mentions(q, config.COINS)
+    if coins and ("week" in ql or "أسبوع" in q or "month" in ql or "شهر" in q):   # rollup-backed, no raw scans
+        from . import rollups
+        rollups.init(con); d = 30 if ("month" in ql or "شهر" in q) else 7
+        rows = con.execute("SELECT * FROM daily_summary WHERE symbol=? ORDER BY day DESC LIMIT ?", (coins[0], d)).fetchall()
+        if rows:
+            b = sum(r["buy_usd"] for r in rows); s_ = sum(r["sell_usd"] for r in rows)
+            return (f"{coins[0]} last {len(rows)} days: whale buys ${b/1e6:.1f}M vs sells ${s_/1e6:.1f}M, "
+                    f"{sum(r['news_n'] for r in rows)} news items, {sum(r['signals_n'] for r in rows)} signals "
+                    f"({sum(r['hits_1h'] for r in rows)}/{sum(r['resolved_1h'] for r in rows)} correct at 1h).")
     if ("silent" in ql or "quiet" in ql or "بدون" in q or "صمت" in q) and not coins:
         rows = con.execute("SELECT symbol, SUM(usd) u, COUNT(*) n FROM whale_tx WHERE kind='from_exchange' AND ts>? GROUP BY symbol ORDER BY u DESC", (now - 21600,)).fetchall()
         out = []

@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS api_keys(token TEXT PRIMARY KEY, tier TEXT, created R
 CREATE TABLE IF NOT EXISTS trade_cases(id TEXT PRIMARY KEY, collected_at REAL, source_type TEXT, source_url TEXT,
   market TEXT, instrument TEXT, side TEXT, entry_ts TEXT, entry_price REAL, exit_price REAL, size_note TEXT, outcome TEXT,
   pnl_note TEXT, why_what TEXT, how TEXT, where_ctx TEXT, lesson TEXT, verified INTEGER DEFAULT 0, confidence REAL, tags TEXT);
+CREATE VIEW IF NOT EXISTS whale_tx_std AS SELECT txhash AS tx_hash, symbol AS chain, ts, from_addr, to_addr,
+  symbol AS token, usd AS amount_usd, kind, wallet FROM whale_tx;
 CREATE INDEX IF NOT EXISTS ix_cases ON trade_cases(market, outcome);
 CREATE INDEX IF NOT EXISTS ix_news ON news(symbol, ts);
 CREATE INDEX IF NOT EXISTS ix_whale ON whale_tx(symbol, ts);

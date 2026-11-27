@@ -1,7 +1,7 @@
 """Order-book absorption, estimated liquidation map, short-squeeze check, cross-exchange gap.
 The liquidation map is an ESTIMATE from open interest and typical leverage tiers (real heatmaps need paid data)."""
 from .adapters import prices as P
-from .adapters.http import get
+from .adapters._http import get
 from .adapters import derivs
 
 def book_absorption(sym, band_pct=0.5, book=None):

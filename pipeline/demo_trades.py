@@ -4,7 +4,7 @@ The raw CSV is data from another assistant, treated as data only. Standard libra
 import csv, math, json, os, html, datetime
 
 SEG = {"tournament main": "tokens", "tournament experiment": "tokens", "tournament high-stake": "tokens", "demo pre-reset": "pre_reset_usd", "demo post-reset": "post_reset_usd", "user external": "excluded", "user external (reset event)": "excluded"}
-LABEL = {"tokens": "Tournament (tokens, not USD)", "pre_reset_usd": "Pre-reset paper ledger (USD)", "post_reset_usd": "Post-reset USD demo", "excluded": "User's own trades (details not received, excluded)"}
+LABEL = {"tokens": "Tournament (tokens, not USD)", "pre_reset_usd": "Pre-reset paper ledger (USD)", "post_reset_usd": "Post-reset USD demo", "excluded": "User's own trades (2 trades, both reported lost, details not received, excluded)"}
 
 
 def wilson(w, n, z=1.96):
@@ -106,7 +106,7 @@ def analyze(path):
     shown = known[-1]["ticket_balance"] if known else None
     res["post_reset_check"] = {"start": 100.0, "sum_of_closed_pnl": sumpnl, "open_stakes": openst, "running_balance": round(100 + sumpnl, 2), "expected_displayed": round(100 + sumpnl - openst, 2), "displayed_balance_in_log": shown,
                                "unreconciled_usd": round((shown if shown is not None else 100 + sumpnl - openst) - (100 + sumpnl - openst), 2),
-                               "note": "The balance on the ticket is the running balance minus the stakes of trades still open (they are held until they close). Unreconciled 0 means the displayed balance is explained by the log. Trade 2 (pre-reset) is booked as a loss but could be a refund."}
+                               "note": "The balance on the ticket is the running balance minus the stakes of trades still open (they are held until they close). Unreconciled 0 means the displayed balance is explained by the log.  Trade 2 (pre-reset) is a confirmed loss."}
     # loss review on the three ledgers separately
     for k in ("tokens", "post_reset_usd"):
         v = seg[k]; lr = {}
@@ -145,7 +145,7 @@ def analyze(path):
     res["held_out_rules"] = {"ledger": "tournament experiment (flat 1T stakes)", "train_n": len(tr), "test_n": len(te), "tests": tests, "survivors_fdr5": int(sum(keep)),
                              "note": "Rules were chosen only by the first 70% of trades in time; nothing survives correction if survivors_fdr5 is 0."}
     res["gaps"] = ["Early tournament rows have no time, balance or reason. Some stakes are assumed (flag column).", "Conviction scores are written by the session at click time, so the 1/2/3 ordering cannot be proven independently.",
-                   "The user's own trades are tagged and excluded (details not received).", "Row 15 (win, +1.84) is derived from a displayed balance, not observed.", "Counts come from a CSV supplied by another assistant. A raw session log re-issue is expected; this page will be re-generated from it."]
+                   "The user's own 2 trades are tagged and excluded (details not received). The other assistant reports both lost; that is not verified here and is not in any ledger above.", "Row 15 (win, +1.84) is derived from a displayed balance, not observed.", "Counts come from a CSV supplied by another assistant. A raw session log re-issue is expected; this page will be re-generated from it."]
     return res
 
 

@@ -1,0 +1,16 @@
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Confluence Engine | live paper test</title>
+<style>body{font:15px system-ui;margin:0;background:#0b0f17;color:#dbe4f0}a{color:#60a5fa}main{max-width:1200px;margin:auto;padding:16px}table{border-collapse:collapse;font-size:13px;margin-bottom:12px}td,th{padding:4px 8px;border-bottom:1px solid #223;text-align:left}small,.m{color:#8da2bd}.warn{background:#3b2a12;color:#fde68a;padding:8px 12px;border-radius:6px}.ok{color:#86efac}</style>
+<main><p><a href="./">&larr; live dashboard</a> | <a href="patterns.html">patterns</a> | <a href="research.html">research</a></p><h1>Live mass paper test</h1>
+<p class=warn>Virtual money only. No accounts, no real orders. Every 5 minutes the engine opens a simulated BUY and SELL on every instrument at every horizon (30s to 6h; 1h and longer every 30 minutes), whatever it expects, and settles from live public prices. This measures what works. A group is only called significant if it survives multiple-testing correction (Benjamini-Hochberg 5%) with a conservative effective sample size. Not financial advice.</p>
+<div id=top class=m>loading stats...</div><div id=out></div>
+<p class=m>Not covered: silver and oil (no free live feed verified), horizons under 30s, real-venue latency and spread. Prices are sampled every 5s, so a 30s trade settles within about 5s of expiry. Data: <a href="https://raw.githubusercontent.com/yousefkhames/confluence-engine/paper/stats.json">stats.json</a> (branch <code>paper</code>).</p></main>
+<script>
+function el(t,x){const e=document.createElement(t);if(x!=null)e.textContent=x;return e}
+function tbl(title,rows){const o=document.getElementById('out');o.append(el('h3',title));const t=el('table');t.innerHTML='<tr><th>Group</th><th>n</th><th>Hit rate</th><th>95% CI (Wilson)</th><th>Mean ret %</th><th>z (adj.)</th><th>Survives FDR</th></tr>';
+rows.forEach(r=>{const w=t.insertRow();[r.key,r.n,r.hit_rate,r.ci95.join(' to '),r.mean_ret_pct,r.z_adj,r.survives_fdr5?'YES':'no'].forEach(z=>w.insertCell().textContent=z)});o.append(t)}
+fetch('https://raw.githubusercontent.com/yousefkhames/confluence-engine/paper/stats.json?'+Date.now()).then(r=>r.json()).then(S=>{
+document.getElementById('top').textContent='Updated '+S.generated+' | trades opened '+S.meta.opened+', settled '+S.meta.settled+', dropped '+S.meta.dropped+' (runner gaps), pending '+S.pending+' | instruments '+S.instruments.length+' | tests '+S.tests+', surviving FDR: '+S.survivors+(S.survivors?'':' (no edge claimable yet)');
+['horizon','class_horizon','session_horizon','instrument'].forEach(g=>{if(S.groups[g]&&S.groups[g].length)tbl('By '+g.replace('_',' x '),S.groups[g].slice(0,24))});
+if(S.groups.instrument_horizon_dir)tbl('Smallest p-values: instrument x horizon x direction',S.groups.instrument_horizon_dir.slice(0,15));
+}).catch(e=>{document.getElementById('top').textContent='No stats yet: the first paper runs have not finished.'});
+</script></html>

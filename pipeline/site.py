@@ -77,6 +77,16 @@ def lenses_page(log):
             b.append(_table(extra["head"], extra["rows"]))
         b.append('<div class=v><b>Verdict.</b> %s</div></div>' % e(L.get("verdict", "")))
         parts.append("".join(b))
+    try:
+        x = json.load(open(os.path.join(os.path.dirname(__file__), "..", "demo", "crosscheck.json"), encoding="utf-8"))
+        c = ['<div class=lens><h3>Cross-check with a second, independent assistant</h3><p class=m>%s</p>' % e(x["source"]), "<h4>Descriptive statistics</h4>", _table(x["stats"]["head"], [[e(c_) for c_ in r] for r in x["stats"]["rows"]]),
+             "<h4>Power: how many trades are needed to see an edge</h4>", _table(x["power"]["head"], [[e(c_) for c_ in r] for r in x["power"]["rows"]]), "<p class=m>%s</p>" % e(x["power"]["note"]),
+             "<h4>Demo stake ladder: chance of hitting the $70 stop</h4>", _table(x["ladder"]["head"], [[e(c_) for c_ in r] for r in x["ladder"]["rows"]]), "<p class=m>%s</p>" % e(x["ladder"]["note"]),
+             "<p><b>Ruin simulation.</b> %s</p><p><b>Rule scorer.</b> %s</p><p><b>Integrity.</b> %s</p>" % (e(x["ruin"]), e(x["scorer"]), e(x["integrity"])),
+             '<div class=v><b>Verdict.</b> Both sides get the same numbers to 2 or 3 decimals on the shared statistics, and the power and sizing results reproduce. No rule is verified on either side. Sizing and stops change how fast a break-even process loses, not whether it has an edge.</div></div>']
+        parts.append("".join(c))
+    except Exception as ex:
+        print("crosscheck section failed: %s" % ex)
     parts.append("<p class=m>Generated %s.</p>" % e(log.get("generated", "")))
     return shell_page("Lens log", "".join(parts), "lenses.html")
 

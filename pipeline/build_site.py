@@ -87,7 +87,7 @@ main{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:14px;padding
 canvas{background:#111827;border-radius:8px;width:100%}button{background:#1f2a40;color:#dbe4f0;border:0;border-radius:6px;padding:5px 10px;margin:0 4px 6px 0;cursor:pointer}button.on{background:#2563eb}
 main>div{min-width:0}.card,small{overflow-wrap:anywhere}table{border-collapse:collapse;font-size:13px}td,th{padding:3px 8px;border-bottom:1px solid #223;text-align:left}h3{margin:14px 0 8px}</style>
 <div class=live>LIVE public data (real), refreshed hourly by a GitHub Actions pipeline. Paper signals only. Not financial advice.</div>
-<div class=warn>Early stage: few or no signals yet, so there is no track record to judge. Synthetic demo: <a href="demo.html">demo.html</a>. <a href="patterns.html">Pattern library</a>. Data: <a href="status.json">status.json</a>.</div>
+<div class=warn>Early stage: few or no signals yet, so there is no track record to judge. Synthetic demo: <a href="demo.html">demo.html</a>. <a href="patterns.html">Pattern library</a>. <a href="research.html">Research engine</a>. Data: <a href="status.json">status.json</a>.</div>
 <header><b>Confluence Engine</b><span id=upd class=m></span><a href="https://github.com/yousefkhames/confluence-engine">source</a></header>
 <main><div><h3 style="margin-top:0">Latest paper signals</h3><div id=feed></div></div>
 <div><div id=btns></div><canvas id=c width=900 height=360></canvas><small id=cl></small>

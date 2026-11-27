@@ -61,7 +61,7 @@ def run(con, data_dir, site_dir):
     fgn = out["emotion"]["fear_greed_now"][0]
     page = """<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Confluence Engine | pattern library</title>
 <style>body{font:15px system-ui;margin:0;background:#0b0f17;color:#dbe4f0}a{color:#60a5fa}main{max-width:1200px;margin:auto;padding:16px}table{border-collapse:collapse;font-size:13px;width:100%%}td,th{padding:6px 8px;border-bottom:1px solid #223;text-align:left;vertical-align:top}small,.m{color:#8da2bd}.warn{background:#3b2a12;color:#fde68a;padding:8px 12px;border-radius:6px}</style>
-<main><p><a href="./">&larr; live dashboard</a></p><h1>Pattern library</h1>
+<main><p><a href="./">&larr; live dashboard</a> | <a href="research.html">research engine</a></p><h1>Pattern library</h1>
 <p class=warn>Real candles (1h, 6h, 1d; %d series, %d bars, %s to %s). Each rule is code: <i>if X then expect Y</i>. Entry is the next bar's open, exit after the hold period, net of %.2f%% round-trip costs. Hit rate is compared with the base rate of the same direction. %s Not financial advice, paper research only.</p>
 <table><tr><th>Rule</th><th>Dir</th><th>Trades</th><th>Hit rate</th><th>Base rate</th><th>Out-of-sample hit (n)</th><th>Avg net %%</th><th>Verdict</th></tr>%s</table>
 <h3>Rules firing on the newest closed bars</h3><ul>%s</ul>
@@ -69,5 +69,12 @@ def run(con, data_dir, site_dir):
 <table><tr><th>Horizon</th><th>n</th><th>Spearman rho</th><th>t (adj.)</th><th>Quintiles</th><th>Verdict</th></tr>%s</table>
 <h3>Emotion now (newest closed daily bar)</h3><table><tr><th>Coin</th><th>Score (-100 fear, +100 greed)</th><th>Mood</th></tr>%s</table><p class=m>Generated %s. Raw: <a href="patterns.json">patterns.json</a>.</p></main>""" % (
         len(S), out["bars_total"], out["span_utc"][0], out["span_utc"][1], cost, e(out["note"] + " Source: " + out["price_source"] + "."), "".join(rows), lm, fgn, erows, snap, now)
+    try:
+        from pipeline import research
+        ro = research.run({c: v for (c, tf), v in S.items() if tf == "1h"}, data_dir, site_dir)
+        open(os.path.join(site_dir, "research.html"), "w", encoding="utf-8").write(research.page(ro))
+        out["research"] = {k: ro[k] for k in ("points", "entries_simulated")}
+    except Exception as ex:
+        out["research_error"] = str(ex)[:200]
     open(os.path.join(site_dir, "patterns.html"), "w", encoding="utf-8").write(page)
     return out

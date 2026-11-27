@@ -122,6 +122,11 @@ def main(argv=None):
         except Exception as e:
             run["errors"].append("history: %s" % e)
         try:
+            from pipeline import deep_history
+            run["deep_history"] = deep_history.update(os.path.join(a.data, "history"), budget_s=60)
+        except Exception as e:
+            run["errors"].append("deep_history: %s" % e)
+        try:
             run["public_feeds"] = public_feeds.fetch(con)
         except Exception as e:
             run["errors"].append("public_feeds: %s" % e)

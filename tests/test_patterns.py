@@ -18,10 +18,11 @@ class Indicators(unittest.TestCase):
     def test_rules_are_causal(self):
         """Truncating the future must not change what a rule says about bar i."""
         bars = walk(500, seed=4)
-        full = P.Ctx(bars)
-        for rid, _t, fn, _h in P.RULES:
+        fng = {b[0] // 86400 * 86400: (b[0] // 86400 * 37) % 100 for b in bars}
+        full = P.Ctx(bars, fng)
+        for rid, _t, fn, *_rest in P.RULES:
             for i in range(230, 480, 7):
-                cut = P.Ctx(bars[:i + 1])
+                cut = P.Ctx(bars[:i + 1], fng)
                 self.assertEqual(fn(full, i), fn(cut, i), rid)
 
 
@@ -46,6 +47,22 @@ class Backtest(unittest.TestCase):
     def test_wilson(self):
         lo, hi = P.wilson(60, 100)
         self.assertTrue(0.49 < lo < 0.6 < hi < 0.70)
+
+
+class Emotion(unittest.TestCase):
+    def test_score_range_and_noise(self):
+        from confluence import emotion as E
+        series = {("S%d" % k, "1d"): [(b[0] * 24, b[1], b[2], b[3], b[4], b[5]) for b in walk(600, seed=30 + k)] for k in range(8)}
+        res = E.validate(series, {})
+        for h, v in res["horizons"].items():
+            self.assertEqual(v["verdict"], "no reliable relationship")
+        c = E.composite(P.Ctx(series[("S0", "1d")]), 300)
+        self.assertTrue(-100 <= c[0] <= 100)
+
+    def test_spearman_perfect(self):
+        from confluence import emotion as E
+        r, _ = E.spearman(list(range(50)), [2 * i for i in range(50)])
+        self.assertAlmostEqual(r, 1.0)
 
 
 if __name__ == "__main__":

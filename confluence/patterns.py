@@ -49,10 +49,13 @@ def atr_series(b, n=14):
 
 class Ctx:
     """Precomputed causal indicators for one series."""
-    def __init__(self, bars):
+    def __init__(self, bars, fng=None):
         self.b = bars
+        # Fear & Greed value for the bar's UTC day (published at the start of that day, so known when the bar opens)
+        self.f = [(fng or {}).get(x[0] // 86400 * 86400) for x in bars]
         self.o = [x[1] for x in bars]; self.h = [x[2] for x in bars]; self.l = [x[3] for x in bars]
         self.c = [x[4] for x in bars]; self.v = [x[5] for x in bars]
+        self.bw = None
         self.rsi = rsi_series(self.c); self.atr = atr_series(bars)
         self.e20 = ema_series(self.c, 20); self.e50 = ema_series(self.c, 50); self.e200 = ema_series(self.c, 200)
 
@@ -147,11 +150,12 @@ def r_squeeze_breakout(x, i):
     """Bollinger bandwidth in its lowest 10% of the last 100 bars, then a close outside the 20-bar range."""
     if i < 120:
         return 0
-    def bw(j):
-        w = x.c[j - 19:j + 1]; m = sum(w) / 20
-        sd = (sum((v - m) ** 2 for v in w) / 20) ** 0.5
-        return 4 * sd / m if m else 0
-    cur = bw(i - 1); hist = sorted(bw(j) for j in range(i - 100, i))
+    if x.bw is None:
+        x.bw = [None] * len(x.c)
+        for j in range(19, len(x.c)):
+            w = x.c[j - 19:j + 1]; m = sum(w) / 20
+            x.bw[j] = 4 * (sum((v - m) ** 2 for v in w) / 20) ** 0.5 / m if m else 0
+    cur = x.bw[i - 1]; hist = sorted(x.bw[i - 100:i])
     if cur > hist[10]:
         return 0
     if x.c[i] > max(x.h[i - 20:i]):
@@ -206,7 +210,62 @@ def r_inside_bar_breakout(x, i):
     return 0
 
 
-# id, rule text, function, hold bars, timeframes
+# ---------- trader-psychology rules (fear, greed, panic, FOMO) ----------
+def r_extreme_fear_turn(x, i):
+    """Crowd in extreme fear (Fear & Greed <= 20) and the first bar that closes above the prior high: expect a relief bounce."""
+    if i < 5 or x.f[i] is None:
+        return 0
+    return 1 if x.f[i] <= 20 and x.c[i] > x.o[i] and x.c[i] > x.h[i - 1] else 0
+
+
+def r_extreme_greed_fade(x, i):
+    """Crowd in extreme greed (Fear & Greed >= 80) and the first bar that closes below the prior low: expect a pullback."""
+    if i < 5 or x.f[i] is None:
+        return 0
+    return -1 if x.f[i] >= 80 and x.c[i] < x.o[i] and x.c[i] < x.l[i - 1] else 0
+
+
+def r_capitulation(x, i):
+    """Panic: more than 15% down over 3 bars on 2x volume with RSI < 30, then a green bar: expect a rebound."""
+    if i < 25 or x.rsi[i] is None:
+        return 0
+    vavg = sum(x.v[i - 20:i]) / 20 or 1e-9
+    drop = x.c[i - 1] / x.c[i - 4] - 1
+    return 1 if drop < -0.15 and max(x.v[i - 3:i]) > 2 * vavg and x.rsi[i - 1] < 30 and x.c[i] > x.o[i] else 0
+
+
+def r_fomo_blowoff(x, i):
+    """FOMO: RSI > 78 and price more than 20% above EMA50, then a red bar: expect a pullback."""
+    if i < 60 or x.rsi[i] is None:
+        return 0
+    return -1 if x.rsi[i - 1] > 78 and x.c[i - 1] > 1.2 * x.e50[i - 1] and x.c[i] < x.o[i] else 0
+
+
+def r_sentiment_thaw(x, i):
+    """Mood turning: Fear & Greed rose 15+ points over 7 bars from below 30 (fear easing): expect a rise."""
+    if i < 10 or x.f[i] is None or x.f[i - 7] is None:
+        return 0
+    return 1 if x.f[i - 7] < 30 and x.f[i] - x.f[i - 7] >= 15 else 0
+
+
+def r_complacency_top(x, i):
+    """Greed cooling: Fear & Greed fell 15+ points over 7 bars from above 70 (greed fading): expect a fall."""
+    if i < 10 or x.f[i] is None or x.f[i - 7] is None:
+        return 0
+    return -1 if x.f[i - 7] > 70 and x.f[i - 7] - x.f[i] >= 15 else 0
+
+
+PSYCH = [
+    ("extreme_fear_turn", "If the crowd is in extreme fear (Fear & Greed <= 20) and a bar closes green above the prior high, expect a relief bounce over the next 6 bars.", r_extreme_fear_turn, 6, ("1d", "6h")),
+    ("extreme_greed_fade", "If the crowd is in extreme greed (Fear & Greed >= 80) and a bar closes red below the prior low, expect a pullback over the next 6 bars.", r_extreme_greed_fade, 6, ("1d", "6h")),
+    ("capitulation_rebound", "If price fell more than 15% in 3 bars on 2x volume with RSI < 30 (panic) and a green bar follows, expect a rebound over the next 6 bars.", r_capitulation, 6, ("1d", "6h")),
+    ("fomo_blowoff_fade", "If RSI > 78 and price is more than 20% above EMA50 (FOMO) and a red bar follows, expect a pullback over the next 6 bars.", r_fomo_blowoff, 6, ("1d", "6h")),
+    ("fear_thaw", "If Fear & Greed rose 15+ points in 7 bars from below 30 (fear easing), expect a rise over the next 6 bars.", r_sentiment_thaw, 6, ("1d",)),
+    ("greed_cooling", "If Fear & Greed fell 15+ points in 7 bars from above 70 (greed fading), expect a fall over the next 6 bars.", r_complacency_top, 6, ("1d",)),
+]
+
+
+# id, rule text, function, hold bars (optional 5th item: allowed timeframes)
 RULES = [
     ("support_bounce", "If price dips into a prior swing low that already held once and prints a bullish rejection candle, expect a rise over the next 6 bars.", r_support_bounce, 6),
     ("resistance_rejection", "If price pokes into a prior swing high and prints a bearish rejection candle, expect a fall over the next 6 bars.", r_resistance_rejection, 6),
@@ -222,6 +281,8 @@ RULES = [
     ("inside_bar_breakout_up", "If an inside bar is followed by a close above its mother bar's high while close > EMA50, expect a rise over the next 6 bars.", r_inside_bar_breakout, 6),
 ]
 
+RULES = RULES + PSYCH
+
 
 # ---------- backtest ----------
 def wilson(k, n, z=1.96):
@@ -232,9 +293,9 @@ def wilson(k, n, z=1.96):
     return [round(c - w, 4), round(c + w, 4)]
 
 
-def scan(bars, rule_fn, hold, cost_pct, ctx=None):
+def scan(bars, rule_fn, hold, cost_pct, ctx=None, fng=None):
     """Return list of trades [(ts, direction, net_ret_pct, gross_ret_pct)] for one series. No overlapping trades."""
-    x = ctx or Ctx(bars); out = []; busy = -1
+    x = ctx or Ctx(bars, fng); out = []; busy = -1
     for i in range(30, len(bars) - hold - 1):
         if i <= busy:
             continue
@@ -269,14 +330,14 @@ def summarize(trades):
             "avg_net_pct": round(sum(net) / n, 4), "total_net_pct": round(sum(net), 2)}
 
 
-def backtest_rule(series, rule, cost_pct, split=0.7):
+def backtest_rule(series, rule, cost_pct, split=0.7, fng=None):
     """series: {(symbol, tf): bars}. Judge against the base rate of the same direction; split by time, not by random."""
-    rid, text, fn, hold = rule
+    rid, text, fn, hold = rule[:4]; tfs = rule[4] if len(rule) > 4 else None
     allt = []; ups = nb = 0; ups_dirs = []
     for (sym, tf), bars in series.items():
-        if len(bars) < 260:
+        if len(bars) < 260 or (tfs and tf not in tfs):
             continue
-        for t in scan(bars, fn, hold, cost_pct):
+        for t in scan(bars, fn, hold, cost_pct, fng=fng):
             allt.append((t[0], t[1], t[2], t[3], sym, tf))
         u, n = base_rate(bars, hold, None); ups += u; nb += n
     allt.sort()
@@ -307,18 +368,21 @@ def backtest_rule(series, rule, cost_pct, split=0.7):
     return res
 
 
-def run_all(series, cost_pct):
-    return [backtest_rule(series, r, cost_pct) for r in RULES]
+def run_all(series, cost_pct, fng=None):
+    return [backtest_rule(series, r, cost_pct, fng=fng) for r in RULES]
 
 
-def live_matches(series, last_n=1):
+def live_matches(series, last_n=1, fng=None):
     """Which rules fire on the newest closed bar of each series (for the dashboard)."""
     out = []
     for (sym, tf), bars in series.items():
         if len(bars) < 260:
             continue
-        x = Ctx(bars); i = len(bars) - 1
-        for rid, text, fn, hold in RULES:
+        x = Ctx(bars, fng); i = len(bars) - 1
+        for rule in RULES:
+            rid, text, fn, hold = rule[:4]
+            if len(rule) > 4 and rule[4] and tf not in rule[4]:
+                continue
             try:
                 d = fn(x, i)
             except Exception:

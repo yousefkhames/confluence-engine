@@ -226,7 +226,7 @@ def run(con, data_dir, now=None):
     con.execute(PRED_DDL)
     card = {"generated": datetime.datetime.utcfromtimestamp(now).isoformat(timespec="seconds") + "Z",
             "paper_only": True, "real_money": False, "min_train": MIN_TRAIN, "min_test": MIN_TEST,
-            "costs_round_trip_pct": _costs(), "entry_threshold": ENTER, "features": FEATURES, "horizons": {}}
+            "costs_round_trip_pct": round(_costs(), 3), "entry_threshold": ENTER, "features": FEATURES, "horizons": {}}
     try:
         import numpy as np
         mods = _models()

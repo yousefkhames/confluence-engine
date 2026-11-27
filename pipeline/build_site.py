@@ -85,7 +85,7 @@ PAGE = """<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport c
 main{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:14px;padding:14px;max-width:1240px;margin:auto}@media(max-width:820px){main{grid-template-columns:1fr}}
 .card{background:#111827;border-radius:8px;padding:10px;margin-bottom:8px}.L{border-left:4px solid #22c55e}.S{border-left:4px solid #ef4444}.score{font-size:20px;font-weight:700}small,.m{color:#8da2bd}.flag{color:#f59e0b;font-size:12px}
 canvas{background:#111827;border-radius:8px;width:100%}button{background:#1f2a40;color:#dbe4f0;border:0;border-radius:6px;padding:5px 10px;margin:0 4px 6px 0;cursor:pointer}button.on{background:#2563eb}
-table{border-collapse:collapse;font-size:13px}td,th{padding:3px 8px;border-bottom:1px solid #223;text-align:left}h3{margin:14px 0 8px}</style>
+main>div{min-width:0}.card,small{overflow-wrap:anywhere}table{border-collapse:collapse;font-size:13px}td,th{padding:3px 8px;border-bottom:1px solid #223;text-align:left}h3{margin:14px 0 8px}</style>
 <div class=live>LIVE public data (real), refreshed hourly by a GitHub Actions pipeline. Paper signals only. Not financial advice.</div>
 <div class=warn>Early stage: few or no signals yet, so there is no track record to judge. Synthetic demo: <a href="demo.html">demo.html</a>. Data: <a href="status.json">status.json</a>.</div>
 <header><b>Confluence Engine</b><span id=upd class=m></span><a href="https://github.com/yousefkhames/confluence-engine">source</a></header>

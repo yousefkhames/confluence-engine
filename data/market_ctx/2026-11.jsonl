@@ -4,9 +4,11 @@
 {"key": "fear_greed", "label": "Extreme Fear", "ts": 1795805248.2553613, "value": 12.0}
 {"key": "fear_greed", "label": "Extreme Fear", "ts": 1795805927.7541564, "value": 12.0}
 {"key": "fear_greed", "label": "Extreme Fear", "ts": 1795806464.8081439, "value": 12.0}
+{"key": "fear_greed", "label": "Extreme Fear", "ts": 1795806708.8078809, "value": 12.0}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795796127.4460485, "value": 283612736896.49225}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795796347.7036393, "value": 283612736896.49225}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795804518.9282684, "value": 283694968336.97546}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795805248.2553613, "value": 283694968336.97546}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795805927.7541564, "value": 283694968336.97546}
 {"key": "stablecoin_supply_usd", "label": "", "ts": 1795806464.8081439, "value": 283677927015.0542}
+{"key": "stablecoin_supply_usd", "label": "", "ts": 1795806708.8078809, "value": 283677927015.0542}

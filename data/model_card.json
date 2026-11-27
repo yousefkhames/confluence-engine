@@ -1,5 +1,5 @@
 {
- "costs_round_trip_pct": 0.30000000000000004,
+ "costs_round_trip_pct": 0.3,
  "entry_threshold": 0.6,
  "features": [
   "r15m",
@@ -22,10 +22,10 @@
   "fear_greed",
   "funding"
  ],
- "generated": "2026-11-27T16:15:52Z",
+ "generated": "2026-11-27T16:19:29Z",
  "horizons": {
   "15m": {
-   "labeled_samples": 112,
+   "labeled_samples": 123,
    "status": "not enough data yet"
   },
   "1h": {

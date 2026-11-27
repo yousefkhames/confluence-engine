@@ -22,14 +22,14 @@
   "fear_greed",
   "funding"
  ],
- "generated": "2026-11-27T20:03:24Z",
+ "generated": "2026-11-27T20:07:56Z",
  "horizons": {
   "15m": {
    "labeled_samples": 191,
    "status": "not enough data yet"
   },
   "1h": {
-   "labeled_samples": 173,
+   "labeled_samples": 188,
    "status": "not enough data yet"
   },
   "24h": {
@@ -37,7 +37,7 @@
    "status": "not enough data yet"
   },
   "4h": {
-   "labeled_samples": 113,
+   "labeled_samples": 128,
    "status": "not enough data yet"
   }
  },

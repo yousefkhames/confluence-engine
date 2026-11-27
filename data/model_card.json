@@ -1,0 +1,81 @@
+{
+ "costs_round_trip_pct": 0.30000000000000004,
+ "entry_threshold": 0.6,
+ "features": [
+  "r15m",
+  "r1h",
+  "r4h",
+  "r24h",
+  "vol24h",
+  "er24h",
+  "btc_r1h",
+  "news_n4h",
+  "news_sent4h",
+  "news_urg4h",
+  "soc_n4h",
+  "soc_sent4h",
+  "soc_eng4h",
+  "whale_usd4h",
+  "whale_n4h",
+  "sm_net",
+  "sm_gross",
+  "fear_greed",
+  "funding"
+ ],
+ "generated": "2026-11-27T16:15:52Z",
+ "horizons": {
+  "15m": {
+   "labeled_samples": 112,
+   "status": "not enough data yet"
+  },
+  "1h": {
+   "labeled_samples": 112,
+   "status": "not enough data yet"
+  },
+  "24h": {
+   "labeled_samples": 0,
+   "status": "not enough data yet"
+  },
+  "4h": {
+   "labeled_samples": 52,
+   "status": "not enough data yet"
+  }
+ },
+ "live": {
+  "15m": {
+   "hit_rate": null,
+   "logged": 0,
+   "paper_total_net_pct": 0.0,
+   "paper_trades": 0,
+   "scored": 0
+  },
+  "1h": {
+   "hit_rate": null,
+   "logged": 0,
+   "paper_total_net_pct": 0.0,
+   "paper_trades": 0,
+   "scored": 0
+  },
+  "24h": {
+   "hit_rate": null,
+   "logged": 0,
+   "paper_total_net_pct": 0.0,
+   "paper_trades": 0,
+   "scored": 0
+  },
+  "4h": {
+   "hit_rate": null,
+   "logged": 0,
+   "paper_total_net_pct": 0.0,
+   "paper_trades": 0,
+   "scored": 0
+  }
+ },
+ "min_test": 100,
+ "min_train": 300,
+ "paper_only": true,
+ "real_money": false,
+ "samples_total": 132,
+ "span_days": 0.6,
+ "status": "no horizon has enough labeled data yet"
+}

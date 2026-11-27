@@ -5,7 +5,7 @@ import json, os, html, glob, datetime, re
 REPO = "https://github.com/yousefkhames/confluence-engine"
 RAW = "https://raw.githubusercontent.com/yousefkhames/confluence-engine"
 PAGES = [("index.html", "Live"), ("paper.html", "Paper test"), ("patterns.html", "Patterns"), ("research.html", "Research"),
-         ("lenses.html", "Lenses"), ("demo-trades.html", "Demo trades"), ("coverage.html", "Coverage"), ("runs.html", "Runs"), ("data.html", "Data"), ("demo.html", "Synthetic demo")]
+         ("lenses.html", "Lenses"), ("fullstudy.html", "Full study"), ("demo-trades.html", "Demo trades"), ("coverage.html", "Coverage"), ("runs.html", "Runs"), ("data.html", "Data"), ("demo.html", "Synthetic demo")]
 
 CSS = """<style id=shell>
 :root{--bg:#0b0f17;--card:#111827;--line:#1f2a40;--ink:#dbe4f0;--mut:#8da2bd;--acc:#60a5fa}
@@ -174,6 +174,14 @@ def finalize(site_dir, data_dir, lens_log=None, coverage=None):
     if coverage:
         open(os.path.join(site_dir, "coverage.html"), "w", encoding="utf-8").write(coverage_page(coverage))
         json.dump(coverage, open(os.path.join(site_dir, "coverage.json"), "w"), indent=1)
+    try:
+        from pipeline import fullstudy
+        rd = os.path.join(os.path.dirname(__file__), "..", "results")
+        knn = json.load(open(os.path.join(rd, "knn_full.json"))); cl = json.load(open(os.path.join(rd, "clusters.json")))
+        open(os.path.join(site_dir, "fullstudy.html"), "w", encoding="utf-8").write(shell_page("Full-population study", fullstudy.page(knn, cl), "fullstudy.html"))
+        json.dump(knn, open(os.path.join(site_dir, "knn_full.json"), "w")); json.dump(cl, open(os.path.join(site_dir, "clusters.json"), "w"))
+    except Exception as ex:
+        print("fullstudy page failed: %s" % ex)
     try:
         from pipeline import demo_trades
         raw = os.path.join(os.path.dirname(__file__), "..", "demo", "demo_trades_raw.csv")

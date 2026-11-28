@@ -484,7 +484,7 @@
    "method": "pooled daily bars, entry = next open, forward return after h bars"
   }
  },
- "generated": "2026-11-28T00:10:03Z",
+ "generated": "2026-11-28T08:03:02Z",
  "live_matches": [
   {
    "bar_ts": 1793404800,

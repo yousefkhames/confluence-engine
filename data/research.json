@@ -22,7 +22,7 @@
   "dist_swing_lo",
   "dist_swing_hi"
  ],
- "generated": "2026-11-28T00:10:20Z",
+ "generated": "2026-11-28T08:03:25Z",
  "horizons_h": [
   1,
   2,
@@ -1921,7 +1921,7 @@
   "horizons": {
    "24": {
     "accuracy": 0.5332,
-    "auc": 0.5394,
+    "auc": 0.5381,
     "base_rate_acc": 0.5257,
     "long_mean_net_pct": 0.792,
     "long_trades": 74,
@@ -1933,7 +1933,7 @@
    },
    "4": {
     "accuracy": 0.5025,
-    "auc": 0.4943,
+    "auc": 0.4899,
     "base_rate_acc": 0.5225,
     "long_mean_net_pct": -0.174,
     "long_trades": 87,

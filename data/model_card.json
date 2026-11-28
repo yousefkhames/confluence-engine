@@ -22,22 +22,22 @@
   "fear_greed",
   "funding"
  ],
- "generated": "2026-11-28T00:10:52Z",
+ "generated": "2026-11-28T08:03:59Z",
  "horizons": {
   "15m": {
-   "labeled_samples": 272,
+   "labeled_samples": 432,
    "status": "not enough data yet"
   },
   "1h": {
-   "labeled_samples": 271,
+   "labeled_samples": 412,
    "status": "not enough data yet"
   },
   "24h": {
-   "labeled_samples": 0,
+   "labeled_samples": 11,
    "status": "not enough data yet"
   },
   "4h": {
-   "labeled_samples": 211,
+   "labeled_samples": 352,
    "status": "not enough data yet"
   }
  },
@@ -75,7 +75,7 @@
  "min_train": 300,
  "paper_only": true,
  "real_money": false,
- "samples_total": 292,
- "span_days": 1.0,
+ "samples_total": 452,
+ "span_days": 1.3,
  "status": "no horizon has enough labeled data yet"
 }

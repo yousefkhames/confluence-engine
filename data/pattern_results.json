@@ -3,8 +3,8 @@
  "cost_round_trip_pct": 0.30000000000000004,
  "emotion": {
   "fear_greed_now": [
-   12,
-   1795737600
+   10,
+   1795824000
   ],
   "snapshot": [
    {
@@ -484,7 +484,7 @@
    "method": "pooled daily bars, entry = next open, forward return after h bars"
   }
  },
- "generated": "2026-11-27T23:37:43Z",
+ "generated": "2026-11-28T00:10:03Z",
  "live_matches": [
   {
    "bar_ts": 1793404800,
